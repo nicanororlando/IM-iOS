@@ -7,23 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260BA9B52738705F0055448D /* ListInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9B42738705F0055448D /* ListInfoView.swift */; };
+		260BA9B7273870C50055448D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9B6273870C50055448D /* Item.swift */; };
+		260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9B8274C0B5E0055448D /* AcercaDeLaApp.swift */; };
+		260BA9BB274C0B730055448D /* Donaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9BA274C0B730055448D /* Donaciones.swift */; };
+		262555FB272B80C300D6DA1A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262555FA272B80C300D6DA1A /* TabBar.swift */; };
+		262555FD272B83C200D6DA1A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262555FC272B83C200D6DA1A /* TabButton.swift */; };
+		262555FF272B8FDE00D6DA1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262555FE272B8FDE00D6DA1A /* ContentView.swift */; };
+		262556012735691200D6DA1A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262556002735691200D6DA1A /* ListView.swift */; };
 		262ED9EB271F8EB600023459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262ED9EA271F8EB600023459 /* AppDelegate.swift */; };
-		262ED9ED271F8EB600023459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262ED9EC271F8EB600023459 /* SceneDelegate.swift */; };
-		262ED9EF271F8EB600023459 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262ED9EE271F8EB600023459 /* ContentView.swift */; };
+		262ED9EF271F8EB600023459 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262ED9EE271F8EB600023459 /* Home.swift */; };
 		262ED9F1271F8EB900023459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F0271F8EB900023459 /* Assets.xcassets */; };
 		262ED9F4271F8EB900023459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F3271F8EB900023459 /* Preview Assets.xcassets */; };
 		262ED9F7271F8EB900023459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F5271F8EB900023459 /* LaunchScreen.storyboard */; };
+		262EDA02271F958600023459 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 262EDA01271F958600023459 /* coritario.pdf */; };
+		262EDA08271F971400023459 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA07271F971400023459 /* PDF.swift */; };
+		262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA09271F9B5B00023459 /* Cancion.swift */; };
+		262EDA0C271F9BEB00023459 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA0B271F9BEB00023459 /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260BA9B42738705F0055448D /* ListInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoView.swift; sourceTree = "<group>"; };
+		260BA9B6273870C50055448D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		260BA9B8274C0B5E0055448D /* AcercaDeLaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcercaDeLaApp.swift; sourceTree = "<group>"; };
+		260BA9BA274C0B730055448D /* Donaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donaciones.swift; sourceTree = "<group>"; };
+		262555FA272B80C300D6DA1A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		262555FC272B83C200D6DA1A /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		262555FE272B8FDE00D6DA1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		262556002735691200D6DA1A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		262ED9E7271F8EB600023459 /* Instituto Misionero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instituto Misionero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		262ED9EA271F8EB600023459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		262ED9EC271F8EB600023459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		262ED9EE271F8EB600023459 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		262ED9EE271F8EB600023459 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		262ED9F0271F8EB900023459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262ED9F3271F8EB900023459 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		262ED9F6271F8EB900023459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262ED9F8271F8EB900023459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		262EDA01271F958600023459 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = coritario.pdf; path = ../../../../../Downloads/coritario.pdf; sourceTree = "<group>"; };
+		262EDA07271F971400023459 /* PDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
+		262EDA09271F9B5B00023459 /* Cancion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancion.swift; sourceTree = "<group>"; };
+		262EDA0B271F9BEB00023459 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +59,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262555F9272B809100D6DA1A /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				262555FA272B80C300D6DA1A /* TabBar.swift */,
+				262555FC272B83C200D6DA1A /* TabButton.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		26255602273569AB00D6DA1A /* Acerca de */ = {
+			isa = PBXGroup;
+			children = (
+				262EDA05271F964300023459 /* Links */,
+				260BA9B42738705F0055448D /* ListInfoView.swift */,
+				260BA9B8274C0B5E0055448D /* AcercaDeLaApp.swift */,
+				260BA9BA274C0B730055448D /* Donaciones.swift */,
+			);
+			path = "Acerca de";
+			sourceTree = "<group>";
+		};
 		262ED9DE271F8EB600023459 = {
 			isa = PBXGroup;
 			children = (
@@ -57,11 +99,12 @@
 			isa = PBXGroup;
 			children = (
 				262ED9EA271F8EB600023459 /* AppDelegate.swift */,
-				262ED9EC271F8EB600023459 /* SceneDelegate.swift */,
-				262ED9EE271F8EB600023459 /* ContentView.swift */,
 				262ED9F0271F8EB900023459 /* Assets.xcassets */,
-				262ED9F5271F8EB900023459 /* LaunchScreen.storyboard */,
+				262ED9FF271F8F3500023459 /* Controller */,
+				262ED9FE271F8F2A00023459 /* View */,
 				262ED9F8271F8EB900023459 /* Info.plist */,
+				262ED9F5271F8EB900023459 /* LaunchScreen.storyboard */,
+				262EDA00271F8F5500023459 /* Util */,
 				262ED9F2271F8EB900023459 /* Preview Content */,
 			);
 			path = "Instituto Misionero";
@@ -73,6 +116,68 @@
 				262ED9F3271F8EB900023459 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		262ED9FE271F8F2A00023459 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				262555F9272B809100D6DA1A /* Tab */,
+				262EDA04271F963400023459 /* Home */,
+				262EDA03271F962500023459 /* Coritario */,
+				26255602273569AB00D6DA1A /* Acerca de */,
+				262EDA06271F96DD00023459 /* Mas */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		262ED9FF271F8F3500023459 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				262EDA09271F9B5B00023459 /* Cancion.swift */,
+				260BA9B6273870C50055448D /* Item.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		262EDA00271F8F5500023459 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				262EDA01271F958600023459 /* coritario.pdf */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		262EDA03271F962500023459 /* Coritario */ = {
+			isa = PBXGroup;
+			children = (
+				262EDA0B271F9BEB00023459 /* RowView.swift */,
+				262556002735691200D6DA1A /* ListView.swift */,
+				262EDA07271F971400023459 /* PDF.swift */,
+			);
+			path = Coritario;
+			sourceTree = "<group>";
+		};
+		262EDA04271F963400023459 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				262555FE272B8FDE00D6DA1A /* ContentView.swift */,
+				262ED9EE271F8EB600023459 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		262EDA05271F964300023459 /* Links */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Links;
+			sourceTree = "<group>";
+		};
+		262EDA06271F96DD00023459 /* Mas */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				262ED9F7271F8EB900023459 /* LaunchScreen.storyboard in Resources */,
+				262EDA02271F958600023459 /* coritario.pdf in Resources */,
 				262ED9F4271F8EB900023459 /* Preview Assets.xcassets in Resources */,
 				262ED9F1271F8EB900023459 /* Assets.xcassets in Resources */,
 			);
@@ -147,8 +253,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				262ED9EB271F8EB600023459 /* AppDelegate.swift in Sources */,
-				262ED9ED271F8EB600023459 /* SceneDelegate.swift in Sources */,
-				262ED9EF271F8EB600023459 /* ContentView.swift in Sources */,
+				262EDA0C271F9BEB00023459 /* RowView.swift in Sources */,
+				260BA9BB274C0B730055448D /* Donaciones.swift in Sources */,
+				262555FF272B8FDE00D6DA1A /* ContentView.swift in Sources */,
+				260BA9B7273870C50055448D /* Item.swift in Sources */,
+				262EDA08271F971400023459 /* PDF.swift in Sources */,
+				262555FB272B80C300D6DA1A /* TabBar.swift in Sources */,
+				262ED9EF271F8EB600023459 /* Home.swift in Sources */,
+				262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */,
+				260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */,
+				262555FD272B83C200D6DA1A /* TabButton.swift in Sources */,
+				262556012735691200D6DA1A /* ListView.swift in Sources */,
+				260BA9B52738705F0055448D /* ListInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,16 +7,37 @@
 //
 
 import UIKit
+import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //SETUP
+        setupView()
+        
         return true
     }
+    
+    //Private methods
+    
+    private func setupView() {
+        
+        //Ajustar para que ocupe el total de tamaño de pantalla
+        let window = UIWindow(frame:UIScreen.main.bounds)
+        
+        //Iniciar vista principal
+        let contentView = Home()
+
+        // Use a UIHostingController as window root view controller.
+        window.rootViewController = UIHostingController(rootView: contentView)
+        self.window = window
+        window.makeKeyAndVisible()
+        }
+
 
     // MARK: UISceneSession Lifecycle
 
