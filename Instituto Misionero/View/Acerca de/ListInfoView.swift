@@ -15,17 +15,44 @@ struct ListInfoView: View {
         
           VStack{
             Button(action: {
+                let url = URL(string: "fb://profile/<PAGE_ID>")!
+                let application = UIApplication.shared
                 
+                /// Check if the facebook App is installed
+                if application.canOpenURL(url) {
+                    application.open(url)
+                } else {
+                    // If Facebook App is not installed, open Safari with Facebook Link
+                    application.open(URL(string: "http://instagram.com/_u/instituto.misionero")!)
+                }
             }) {
                 Boton(image: "star.fill", title: "Instagram", subTitle: "@instituto.misionero")
             }
             Button(action: {
+                let url = URL(string: "fb://profile/<PAGE_ID>")!
+                let application = UIApplication.shared
                 
+                /// Check if the facebook App is installed
+                if application.canOpenURL(url) {
+                    application.open(url)
+                } else {
+                    // If Facebook App is not installed, open Safari with Facebook Link
+                    application.open(URL(string: "https://de-de.facebook.com/apple")!)
+                }
             }) {
                 Boton(image: "star", title: "Facebook", subTitle: "facebook.com/institutomisionero")
             }
             Button(action: {
+                let url = URL(string: "fb://profile/<PAGE_ID>")!
+                let application = UIApplication.shared
                 
+                /// Check if the facebook App is installed
+                if application.canOpenURL(url) {
+                    application.open(url)
+                } else {
+                    // If Facebook App is not installed, open Safari with Facebook Link
+                    application.open(URL(string: "https://www.youtube.com/user/InstitutoMisionerUAP")!)
+                }
             }) {
                 Boton(image: "star.fill", title: "Youtube", subTitle: "youtube.com/institutomisionero")
             }

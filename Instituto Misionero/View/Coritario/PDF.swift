@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 import PDFKit
 
 /*
@@ -109,14 +110,89 @@ struct PDFKitRepresentedView: UIViewRepresentable {
 
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PDFKitRepresentedView>) {
         
-        /// Update the view.
-        var page = self.pdfView.document?.page(at: self.cancion.id-1)
-        
-        pdfView.go(to: (page!))
-        pdfView.displayMode = .singlePage
-        
+        let i = cancion.id - 1
+        var page = self.pdfView.document?.page(at: i)
+
+        if(i == 17 || i == 28 || i == 40 || i == 61 || i == 68 || i == 148) {
+            
+            if (i == 17) {
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                pdfView.go(to: (page!))
+            }
+            else if (i == 28) {
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+1)
+                pdfView.go(to: (page!))
+            }
+            else if (i == 40){
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+2)
+                pdfView.go(to: (page!))
+            }
+            else if (i == 61){
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+3)
+                pdfView.go(to: (page!))
+            }
+            else if(i == 68){
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+4)
+                pdfView.go(to: (page!))
+            }
+            else {
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+5)
+                pdfView.go(to: (page!))
+            }
+        }
+        else if(i >= 18 && i <= 27) {
+            page = self.pdfView.document?.page(at: i+1)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 29 && i <= 39){
+            page = self.pdfView.document?.page(at: i+2)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 41 && i <= 60) {
+            page = self.pdfView.document?.page(at: i+3)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 62 && i <= 67) {
+            page = self.pdfView.document?.page(at: i+4)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 69 && i <= 148) {
+            page = self.pdfView.document?.page(at: i+5)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if (i >= 149){
+            page = self.pdfView.document?.page(at: i+6)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else{
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
         pdfView.autoScales = true
-        pdfView.displaysPageBreaks = true
     }
 }
 

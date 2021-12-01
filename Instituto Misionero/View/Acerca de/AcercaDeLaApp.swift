@@ -27,7 +27,9 @@ struct AcercaDeLaApp: View {
             VStack{
                 Text("Desarrolado por: ")
                 Button(action: {
-                    
+                    let url = URL(string: "mailto:nicanororlando@gmail.com?subject=Consulta - Aplicacion IM")!
+                    let application = UIApplication.shared
+                    application.open(url)
                 }) {
                 Text("nicanororlando@gmail.com")
                 }
@@ -45,14 +47,18 @@ struct AcercaDeLaApp: View {
                 Text("dudes en contactarnos!")
                 Text("")
                 Button(action: {
-                    
+                    let url = URL(string: "mailto:institutomisionero2021@gmail.com?subject=Consulta - Aplicacion IM")!
+                    let application = UIApplication.shared
+                    application.open(url)
                 }) {
                 Text("institutomisionero2021@gmail.com")
                 }
             }
             Text("")
             Button(action: {
-                
+                let url = URL(string: "market://details?id=")!
+                let application = UIApplication.shared
+                application.open(url)
             }) {
             Text("¡Califica esta App!")
             }

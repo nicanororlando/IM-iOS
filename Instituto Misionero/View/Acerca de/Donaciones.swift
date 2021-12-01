@@ -24,7 +24,7 @@ struct Donaciones: View {
                 Text("Misionero")
                     .foregroundColor(.gray)
                     .fontWeight(.bold)
-                    .font(.largeTitle)
+          	          .font(.largeTitle)
                 }
             }.frame(width: .minimum(400, 400), height: 130, alignment: .center)
             
@@ -52,15 +52,15 @@ struct Donaciones: View {
                     
                 }) {
                 Text("www.pagos.uap.edu.ar")
-                }.padding(8)
+                }.padding(.top, 7)
                 
                 Text("2) Busca la opcion de: ")
-                    .padding(5)
+                    .padding(.top, 15)
                 Text("Donaciones Instituto Misionero")
                     .fontWeight(.light)
                 
                 Text("3) En la descripcion escribe: ")
-                    .padding(5)
+                    .padding(.top, 15)
                 Text("Facultad de ciencias de la salud")
                     .fontWeight(.light)
             }
