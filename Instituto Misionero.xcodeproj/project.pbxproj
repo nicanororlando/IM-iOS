@@ -20,10 +20,11 @@
 		262ED9F1271F8EB900023459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F0271F8EB900023459 /* Assets.xcassets */; };
 		262ED9F4271F8EB900023459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F3271F8EB900023459 /* Preview Assets.xcassets */; };
 		262ED9F7271F8EB900023459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F5271F8EB900023459 /* LaunchScreen.storyboard */; };
-		262EDA02271F958600023459 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 262EDA01271F958600023459 /* coritario.pdf */; };
 		262EDA08271F971400023459 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA07271F971400023459 /* PDF.swift */; };
 		262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA09271F9B5B00023459 /* Cancion.swift */; };
 		262EDA0C271F9BEB00023459 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA0B271F9BEB00023459 /* RowView.swift */; };
+		266FAD7527ADD49F005CC046 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266FAD7427ADD49F005CC046 /* CustomButton.swift */; };
+		267A12F427AD6674007326E1 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 267A12F327AD6673007326E1 /* coritario.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +43,11 @@
 		262ED9F3271F8EB900023459 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		262ED9F6271F8EB900023459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262ED9F8271F8EB900023459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		262EDA01271F958600023459 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = coritario.pdf; path = ../../../../../Downloads/coritario.pdf; sourceTree = "<group>"; };
 		262EDA07271F971400023459 /* PDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
 		262EDA09271F9B5B00023459 /* Cancion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancion.swift; sourceTree = "<group>"; };
 		262EDA0B271F9BEB00023459 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		266FAD7427ADD49F005CC046 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		267A12F327AD6673007326E1 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = coritario.pdf; path = ../../../../Downloads/coritario.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,7 @@
 		262EDA00271F8F5500023459 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				262EDA01271F958600023459 /* coritario.pdf */,
+				267A12F327AD6673007326E1 /* coritario.pdf */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -162,6 +164,7 @@
 			children = (
 				262555FE272B8FDE00D6DA1A /* ContentView.swift */,
 				262ED9EE271F8EB600023459 /* Home.swift */,
+				266FAD7427ADD49F005CC046 /* CustomButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -239,8 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				262ED9F7271F8EB900023459 /* LaunchScreen.storyboard in Resources */,
-				262EDA02271F958600023459 /* coritario.pdf in Resources */,
 				262ED9F4271F8EB900023459 /* Preview Assets.xcassets in Resources */,
+				267A12F427AD6674007326E1 /* coritario.pdf in Resources */,
 				262ED9F1271F8EB900023459 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +259,7 @@
 				262EDA0C271F9BEB00023459 /* RowView.swift in Sources */,
 				260BA9BB274C0B730055448D /* Donaciones.swift in Sources */,
 				262555FF272B8FDE00D6DA1A /* ContentView.swift in Sources */,
+				266FAD7527ADD49F005CC046 /* CustomButton.swift in Sources */,
 				260BA9B7273870C50055448D /* Item.swift in Sources */,
 				262EDA08271F971400023459 /* PDF.swift in Sources */,
 				262555FB272B80C300D6DA1A /* TabBar.swift in Sources */,

@@ -12,7 +12,7 @@ struct Donaciones: View {
     var body: some View {
         VStack{
             HStack{
-                Image("nose")
+                Image("im")
                     .resizable()
                     .frame(width: 120, height: 120, alignment: .center)
                 VStack(alignment: .leading){

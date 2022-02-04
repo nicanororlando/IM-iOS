@@ -11,7 +11,36 @@ import SwiftUI
 struct Home: View {
     
     var body: some View {
-        Text("Hola")
+        
+            ZStack{
+            ///La 6 o 13 son las mejores.
+            Image("fondo13")
+                .resizable()
+                .scaledToFill()
+            
+            VStack{
+                Button(action: {
+                    
+                }) {
+                Text("Coritario")
+                }
+                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 10, bgColor: .red, fgColor: .white, cornerRadius: 10))
+                
+                Text("")
+                Text("")
+                
+                Button(action: {
+                    
+                }) {
+                HStack{
+                    //Image(systemName: home)
+                    Text("Acerca de nosotros")
+                }
+                }
+                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 10, bgColor: .red, fgColor: .white, cornerRadius: 10))
+            }
+            //Image("im")
+        }
     }
 }
 

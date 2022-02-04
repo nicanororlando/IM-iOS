@@ -12,7 +12,7 @@ struct AcercaDeLaApp: View {
     var body: some View {
         
         VStack{
-            Image("nose")
+            Image("im")
             HStack{
                 Text("Instituto")
                     //.foregroundColor(.init(red: 33, green: 23, blue: 12))
@@ -50,8 +50,7 @@ struct AcercaDeLaApp: View {
                     let url = URL(string: "mailto:institutomisionero2021@gmail.com?subject=Consulta - Aplicacion IM")!
                     let application = UIApplication.shared
                     application.open(url)
-                }) {
-                Text("institutomisionero2021@gmail.com")
+                }) {                Text("institutomisionero2021@gmail.com")
                 }
             }
             Text("")
