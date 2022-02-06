@@ -14,6 +14,9 @@ struct filledRoundedCornerButtonStyle: ButtonStyle {
     var bgColor: Color = .red
     var fgColor: Color = .white
     var cornerRadius: CGFloat = 20
+    var opacity: CGFloat
+    var X: CGFloat
+    var Y: CGFloat
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -22,7 +25,8 @@ struct filledRoundedCornerButtonStyle: ButtonStyle {
             .background(bgColor)
             .foregroundColor(fgColor)
             .cornerRadius(cornerRadius)
-            .opacity(1)
+            .opacity(Double(opacity))
+            .offset(x: X, y: Y)
             .scaleEffect(configuration.isPressed ? 0.7 : 1.0)
             .animation(.spring())
     }
