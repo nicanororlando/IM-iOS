@@ -42,7 +42,7 @@ struct ModalView: View {
             if(isShowing){
                 Color.black
                     .opacity(startOpacity + (endOpacity - startOpacity) * dragPercentage)
-                    .edgesIgnoringSafeArea(.all)
+                    //.edgesIgnoringSafeArea(.all)
                     .onTapGesture {
                         self.isShowing = false
                 }
@@ -89,14 +89,16 @@ var mainView: some View {
                         }// -> VStack
                 }// -> HStack
                 .padding(.bottom, 10)
-            
+                
                 Text("Somos un grupo de jóvenes misioneros de la Universidad Adventista del Plata, que llevamos esperanza y salud al mundo.")
+                    .fontWeight(.light)
                     .font(.system(size: 20, weight: .regular))
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 450)
                     .multilineTextAlignment(.center)
                 
-                Text("Proclamamos la 2º venida de Jesús.")
+                Text("¡Proclamamos la 2º venida de Jesús!")
+                    .fontWeight(.light)
                     .font(.system(size: 20, weight: .regular))
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.bottom, 10)
@@ -107,7 +109,6 @@ var mainView: some View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 450)
                     .padding(.bottom, 40)
-                
                 Button(action: {
                     
                 }) {
@@ -125,6 +126,7 @@ var mainView: some View {
             .frame(maxHeight: .infinity)
             .padding(.top, paddingTop)
             .padding(.bottom, paddingBottom)
+            .background(Color.white.opacity(0.8))
         }// --> VStack
         .frame(height: curHeight)
         .frame(maxWidth: .infinity)
@@ -135,7 +137,7 @@ var mainView: some View {
                 Rectangle()
                     .frame(height: curHeight / 2)
             }
-            .foregroundColor(.white)
+            .foregroundColor(Color(UIColor(named: "semi-dark-red")!).opacity(0.6))
         )
         .animation(isDragging ? nil  : .easeInOut(duration: 0.45))
         .onDisappear { self.curHeight = self.minHeight }
@@ -168,8 +170,9 @@ var mainView: some View {
                     self.curHeight = self.maxHeight
                 }
                 else if self.curHeight < self.minHeight {
-                    self.curHeight = self.minHeight
+                    self.isShowing = false
                 }
+                else { self.curHeight = self.maxHeight }
             }
     }// --> End dragGesture
 }// --> End ModalView
@@ -177,5 +180,6 @@ var mainView: some View {
 struct ModalView_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+        //ModalView(isShowing: .constant(true))
     }
 }
