@@ -25,6 +25,18 @@ struct ModalView: View {
         return max(0, min(1, res))
     }
     
+    //Padding top en funcion de la altura
+    var paddingTop: CGFloat {
+        let res = CGFloat(((-2/5)*curHeight) + 180)
+        return res
+    }
+    //Padding bottom en funcion de la altura
+    var paddingBottom: CGFloat {
+        let res = CGFloat(((2/5)*curHeight) - 380)
+        return res
+    }
+
+    
     var body: some View {
         ZStack(alignment: .bottom){
             if(isShowing){
@@ -45,7 +57,6 @@ struct ModalView: View {
 
 var mainView: some View {
     VStack{
-
         ///Handle
         ZStack {
             Capsule()
@@ -57,23 +68,63 @@ var mainView: some View {
             .gesture(dragGesture)
         
         ZStack{
-            VStack{
-                Image("icono_im")
+            VStack(alignment: .center){
+                HStack{
+                    Image("icono_im")
                         .resizable()
-                        .frame(width: 100, height: 100)
-                        .offset(x: 0, y: 10)
-                    Text("Instituto")
-                        .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                        .frame(width: 80, height: 80)
+
+                    VStack(alignment: .leading){
+                        Text("Instituto")
+                            .fontWeight(.bold)
+                            .font(.system(size: 25, weight: .regular))
+                            .fixedSize(horizontal: false, vertical: true)
+                            .foregroundColor(Color(UIColor(named: "dark-red")!))
+                        Text("Misionero")
+                            .fontWeight(.bold)
+                            .font(.system(size: 25, weight: .regular))
+                            .fixedSize(horizontal: false, vertical: true)
+                            .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                        
+                        }// -> VStack
+                }// -> HStack
+                .padding(.bottom, 10)
+            
+                Text("Somos un grupo de jóvenes misioneros de la Universidad Adventista del Plata, que llevamos esperanza y salud al mundo.")
+                    .font(.system(size: 20, weight: .regular))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 450)
+                    .multilineTextAlignment(.center)
+                
+                Text("Proclamamos la 2º venida de Jesús.")
+                    .font(.system(size: 20, weight: .regular))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.bottom, 10)
+                
+                Text("Nuestro principal objetivo es ser misioneros como lo fue Jesús. Así seguir su ejemplo a partir del estudio de su Palabra y la práctica del espíritu de servicio en todos los ministerios que él realizaba: “Recorría Jesús todas las ciudades y aldeas, enseñando en las sinagogas de ellos, y predicando el evangelio del reino, y sanando toda enfermedad y toda dolencia en el pueblo.”")
+                    .font(.system(size: 20, weight: .regular))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 450)
+                    .padding(.bottom, 40)
+                
+                Button(action: {
+                    
+                }) {
+                HStack{
+                    Image(systemName: "info.circle")
+                    Text("Mas info")
                         .fontWeight(.bold)
-                        .offset(x: 0, y: -5)
-                    Text("Misionero")
-                        .foregroundColor(Color(UIColor(named: "semi-dark-red")!))
-                        .fontWeight(.bold)
-                        .offset(x: 0, y: -10)
+                    }
+                }
+                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "semi-dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -30))
+                .padding(.bottom, 20)
+                
                 }// --> VStack
             }// --> ZStack
             .frame(maxHeight: .infinity)
-            .padding(.bottom, 35)
+            .padding(.top, paddingTop)
+            .padding(.bottom, paddingBottom)
         }// --> VStack
         .frame(height: curHeight)
         .frame(maxWidth: .infinity)
@@ -84,7 +135,7 @@ var mainView: some View {
                 Rectangle()
                     .frame(height: curHeight / 2)
             }
-             .foregroundColor(.white)
+            .foregroundColor(.white)
         )
         .animation(isDragging ? nil  : .easeInOut(duration: 0.45))
         .onDisappear { self.curHeight = self.minHeight }
