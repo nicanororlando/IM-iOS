@@ -10,20 +10,26 @@ import SwiftUI
 
 struct Donaciones: View {
     var body: some View {
+        ZStack{
+            Image("fondo13")
+                .resizable()
+                .scaledToFill()
+                .opacity(0.3)
+            
         VStack{
             HStack{
-                Image("im")
+                Image("icono_im")
                     .resizable()
                     .frame(width: 120, height: 120, alignment: .center)
                 VStack(alignment: .leading){
                 Text("Instituto")
-                    //.foregroundColor(.init(red: 80, green: 83, blue: 40))
-                    .fontWeight(.bold)
+                    .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                    .fontWeight(.semibold)
                     .font(.largeTitle)
                     
                 Text("Misionero")
-                    .foregroundColor(.gray)
-                    .fontWeight(.bold)
+                    .foregroundColor(Color(UIColor(named: "dark-red")!))
+                    .fontWeight(.semibold)
           	          .font(.largeTitle)
                 }
             }.frame(width: .minimum(400, 400), height: 130, alignment: .center)
@@ -64,8 +70,9 @@ struct Donaciones: View {
                 Text("Facultad de ciencias de la salud")
                     .fontWeight(.light)
             }
-        }
-    }
+        }// --> VStack
+    }// --> ZStack
+}
 }
 
 struct Donaciones_Previews: PreviewProvider {

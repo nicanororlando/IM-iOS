@@ -14,12 +14,14 @@ struct ModalView: View {
     @State private var curHeight: CGFloat = 450
     @State private var isDragging = false
     
+    let screenRect: CGRect = UIScreen.main.bounds
     let minHeight: CGFloat = 450
     let maxHeight: CGFloat = 700
     
-    let startOpacity: Double = 0.4
+    let startOpacity: Double = 0.5
     let endOpacity: Double = 0.8
     
+    //Funcion para la opacidad, tiene dos tipos de retorno.
     var dragPercentage: Double {
         let res = Double((curHeight - minHeight) / (maxHeight - minHeight))
         return max(0, min(1, res))
@@ -42,7 +44,7 @@ struct ModalView: View {
             if(isShowing){
                 Color.black
                     .opacity(startOpacity + (endOpacity - startOpacity) * dragPercentage)
-                    //.edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
                         self.isShowing = false
                 }
@@ -60,11 +62,11 @@ var mainView: some View {
         ///Handle
         ZStack {
             Capsule()
-                .frame(width: 40, height: 6)
+                .frame(width: 45, height: 6)
         }
-        .frame(height: 40)
+        .frame(height: 35)
         .frame(maxWidth: .infinity)
-        .background(Color.white.opacity(0.00001)) ///Importante para el dragging
+            .background(Color.white.opacity(0.00001)) ///Importante para el dragging
             .gesture(dragGesture)
         
         ZStack{
@@ -88,8 +90,9 @@ var mainView: some View {
                         
                         }// -> VStack
                 }// -> HStack
-                .padding(.bottom, 10)
+                .padding(.vertical, 10)
                 
+                Group{
                 Text("Somos un grupo de jóvenes misioneros de la Universidad Adventista del Plata, que llevamos esperanza y salud al mundo.")
                     .fontWeight(.light)
                     .font(.system(size: 20, weight: .regular))
@@ -109,6 +112,7 @@ var mainView: some View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 450)
                     .padding(.bottom, 40)
+                    
                 Button(action: {
                     
                 }) {
@@ -118,26 +122,26 @@ var mainView: some View {
                         .fontWeight(.bold)
                     }
                 }
-                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "semi-dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -30))
+                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "dark-red")!).opacity(0.8), bgColor2: Color(UIColor(named: "dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -30, linewidth: 0))
                 .padding(.bottom, 20)
-                
+                    }// --> Group
+
                 }// --> VStack
             }// --> ZStack
             .frame(maxHeight: .infinity)
             .padding(.top, paddingTop)
             .padding(.bottom, paddingBottom)
-            .background(Color.white.opacity(0.8))
+            .background(Color.white.opacity(0.6))
         }// --> VStack
         .frame(height: curHeight)
         .frame(maxWidth: .infinity)
         .background(
             ///Rounded corners only top
             ZStack{
-                RoundedRectangle(cornerRadius: 30)
-                Rectangle()
-                    .frame(height: curHeight / 2)
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .frame(width: screenRect.size.width, height: curHeight)
             }
-            .foregroundColor(Color(UIColor(named: "semi-dark-red")!).opacity(0.6))
+            .foregroundColor(Color(UIColor(named: "dark-red")!).opacity(0.7))
         )
         .animation(isDragging ? nil  : .easeInOut(duration: 0.45))
         .onDisappear { self.curHeight = self.minHeight }
@@ -151,7 +155,6 @@ var mainView: some View {
                 if !self.isDragging {
                     self.isDragging = true
                 }
-                
                 let dragAmount = val.translation.height - self.prevDragTranslation.height
                 
                 if self.curHeight > self.maxHeight || self.curHeight < self.minHeight {
