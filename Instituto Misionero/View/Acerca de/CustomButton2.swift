@@ -2,17 +2,17 @@
 //  CustomButton.swift
 //  Instituto Misionero
 //
-//  Created by Nicanor Orlando on 04/02/2022.
+//  Created by Nicanor Orlando on 08/02/2022.
 //  Copyright © 2022 KnorDev. All rights reserved.
 //
 
 import SwiftUI
 
-struct filledRoundedCornerButtonStyle: ButtonStyle {
+struct roundedCornerButtonStyle: ButtonStyle {
     var font: Font = .title
     var padding: CGFloat = 0
-    var bgColor: Color = Color(UIColor(named: "semi-dark-red")!)
-    var bgColor2: Color = Color(UIColor(named: "semi-dark-red")!)
+    var bgColor: Color = Color(UIColor(named: "semi-dark-red")!).opacity(0.8)
+    var bgColor2: Color = Color(UIColor(named: "semi-dark-red")!).opacity(0.8)
     var fgColor: Color = .white
     var cornerRadius: CGFloat = 20
     var opacity: CGFloat = 1
@@ -33,7 +33,7 @@ struct filledRoundedCornerButtonStyle: ButtonStyle {
                 .stroke(Color.white, lineWidth: linewidth))
         
             .scaleEffect(configuration.isPressed ? 0.7 : 1.0)
-            .animation(.spring())	
+            .animation(.spring())
     }
 }
 

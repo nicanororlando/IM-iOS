@@ -66,40 +66,11 @@ struct AcercaDeLaApp: View {
             }) {
             Text("¡Califica esta App!")
             }
-            .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "dark-red")!).opacity(0.8), bgColor2: Color(UIColor(named: "dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0, linewidth: 0))
+            .buttonStyle(filledRoundedCornerButtonStyle(padding: 15, cornerRadius: 10, linewidth: 0))
             
         }// --> VStack
     }// --> ZStack
 }
-}
-
-struct roundedCornerButtonStyle: ButtonStyle {
-    var font: Font = .title
-    var padding: CGFloat = 20
-    var bgColor: Color = Color(UIColor(named: "semi-dark-red")!)
-    var bgColor2: Color = .white
-    var fgColor: Color = .white
-    var cornerRadius: CGFloat = 20
-    var opacity: CGFloat
-    var X: CGFloat
-    var Y: CGFloat
-    var linewidth: CGFloat = 1
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(font)
-            .padding(padding)
-            .background(RadialGradient(gradient: Gradient(colors: [bgColor, bgColor2]), center: .center, startRadius: 150, endRadius: 1))
-            .foregroundColor(fgColor)
-            .cornerRadius(cornerRadius)
-            .opacity(Double(opacity))
-            .offset(x: X, y: Y)
-            .overlay(RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(Color.white, lineWidth: linewidth))
-        
-            .scaleEffect(configuration.isPressed ? 0.7 : 1.0)
-            .animation(.spring())
-    }
 }
 
 struct AcercaDeLaApp_Previews: PreviewProvider {

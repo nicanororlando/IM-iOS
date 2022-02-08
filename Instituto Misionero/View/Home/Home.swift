@@ -13,7 +13,7 @@ struct Home: View {
     
     @State private var showModal = false
     @State var navigateToCoritario = false
-    @State var navigateToAcercaDe = false
+    @State var navigateToListInfoView = false
     
     var body: some View {
         NavigationView {
@@ -21,7 +21,7 @@ struct Home: View {
             Image("fondo13")
                 .resizable()
                 .scaledToFill()
-                .blur(radius: 3)
+                .blur(radius: 0)
             
             VStack{
                 Spacer()
@@ -66,7 +66,7 @@ struct Home: View {
                 
                 // ACERCA DE //
                 Button(action: {
-                    self.navigateToAcercaDe = true
+                    self.navigateToListInfoView = true
                 }) {
                 HStack{
                     Image(systemName: "info.circle")
@@ -90,8 +90,8 @@ struct Home: View {
                                 EmptyView()
                             })
                         NavigationLink(
-                            destination: ListInfoView(),
-                            isActive: $navigateToAcercaDe,
+                            destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),
+                            isActive: $navigateToListInfoView,
                             label: {
                                 EmptyView()
                             })
