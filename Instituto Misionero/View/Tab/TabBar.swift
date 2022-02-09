@@ -11,6 +11,7 @@ import SwiftUI
 struct TabBar: View {
     
     @State var current = "Home"
+    @State var navigateToListInfoView = false
     
     var body: some View {
         
@@ -21,10 +22,9 @@ struct TabBar: View {
                     .tag("Home")
                 ListView()
                     .tag("Coritario")
-                Text("Acerca de")
+                ListInfoView(navigateToListInfoView: $navigateToListInfoView)
                     .tag("Acerca de")
             }
-            
             HStack(spacing: 0){
                 TabButton(title: "Home", image: "home",
                     selected: $current)
@@ -33,11 +33,9 @@ struct TabBar: View {
                 Spacer(minLength: 0)
                 TabButton(title: "Acerca de", image: "user", selected: $current)
             }
-            .padding(.vertical, 12)
+            .foregroundColor(Color.black)
+            .padding(.top)
             .padding(.horizontal)
-            .background(Color.black)
-            .clipShape(Capsule())
-            .padding(.horizontal,25)
         }
         
     }

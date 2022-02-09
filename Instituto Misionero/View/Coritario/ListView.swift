@@ -16,37 +16,17 @@ struct ListView: View {
     ///Para acceder a los canciones del modelo
     @EnvironmentObject var cancionesModelData: CancionesModelData
     
-    ///Para trabajar con estructuras se utiliza variable que pueda cambiar de estado
-    @State private var showFavorites = false
-    private var filteredCanciones: [Cancion]{
-            
-        ///Recorre la lista de programmers
-        return cancionesModelData.canciones.filter { cancion in
-                
-            ///Si no estamos mostrando todos los favoritos se retornara el listado completo de programadores, y si estamos filtrando los por favoritos tendra en cuenta si el programador es favorito o no
-            return !showFavorites || cancion.favorite
-        }
-    }
-    
-    
     var body: some View {
-        
         NavigationView {
             VStack{
                 SearchView(searchText: $searchText, isSearching: $isSearching)
-                	
-                ///Signo $ para acceder al valor del estado de forma mutable
-                ///Cuando cambiemos el toggle tambien la variable showFavorites va a cambiar. Por lo cual la variable filtered se vuelve a ejecutar
-                Toggle(isOn: $showFavorites) {
-                    Text("Mostrar Favoritos")
-                }.padding()
                 
                 ///Lista con filtro de favoritos y barra de busqueda
-                List(filteredCanciones.filter({ "\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
+                List(cancionesModelData.canciones.filter({        "\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
             
                     ///A donde queremos navegar, le pasamos a destination una instancia de la vista a la que queremos navegar
-                    NavigationLink(destination: PDF(cancion: cancion, favorite:   self.$cancionesModelData.canciones[cancion.id].favorite)) {
-                
+                    NavigationLink(destination: PDF(cancion: cancion)) {
+                	
                         ///Nombre de nuestra fila, pasandole cada uno de nuestros programadores de nuestro array. No hace falta que los definamos de nuestra lista
                         RowView(cancion: cancion)
                     }
@@ -100,7 +80,7 @@ struct SearchView: View {
                     self.searchText = ""
                     
                     ///Para ocultar el teclado
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     
                 }, label: {
                     Text("Cancel")
@@ -113,9 +93,10 @@ struct SearchView: View {
         }
     }
 }
-
+/*
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView().environmentObject(CancionesModelData())
     }
 }
+*/

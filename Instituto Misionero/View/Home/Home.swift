@@ -21,7 +21,7 @@ struct Home: View {
             Image("fondo13")
                 .resizable()
                 .scaledToFill()
-                .blur(radius: 0)
+                .opacity(0.9)
             
             VStack{
                 Spacer()
@@ -50,59 +50,53 @@ struct Home: View {
                 .buttonStyle(filledRoundedCornerButtonStyle(font: .largeTitle, padding: 10, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.7), fgColor: .white, cornerRadius: 20, opacity: 1.0, X: 0, Y: 0))
                 // END Im //
                 
+                Group(){
                 // CORITARIO //
-                Button(action: {
-                    self.navigateToCoritario = true
-                }) {
-                HStack{
-                    Image(systemName: "music.note.list")
-                    Text("Coritario")
-                        .fontWeight(.semibold)
-                    }
-                }
-                .padding(.bottom,10)
-                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 20, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
+                NavigationLink(
+                    destination: ListView(),
+                    isActive: $navigateToCoritario,
+                    label: {
+                        Button(action: {
+                            self.navigateToCoritario = true
+                        }) {
+                        HStack{
+                            Image(systemName: "music.note.list")
+                            Text("Coritario")
+                                .fontWeight(.semibold)
+                            }
+                        }
+                        .padding(.bottom,10)
+                        .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 20, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
+                    })	
                 // END Coritario //
                 
                 // ACERCA DE //
-                Button(action: {
-                    self.navigateToListInfoView = true
-                }) {
-                HStack{
-                    Image(systemName: "info.circle")
-                    Text("Acerca de nosotros")
-                        .fontWeight(.semibold)
-                    }
-                }
-                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color.white.opacity(0.6), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
+                NavigationLink(
+                    destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),
+                    isActive: $navigateToListInfoView,
+                    label: {
+                        Button(action: {
+                            self.navigateToListInfoView = true
+                        }) {
+                        HStack{
+                            Image(systemName: "info.circle")
+                            Text("Acerca de nosotros")
+                                .fontWeight(.semibold)
+                            }
+                        }
+                        .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color.white.opacity(0.6), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
+                    })
+                }// --> Group
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                
                 // END Acerca de  //
                 
                 Spacer()
                     .frame(height: 30)
                 
                 }// --> VStack
-                .background(
-                    Group{
-                        NavigationLink(
-                            destination: ListView(),
-                            isActive: $navigateToCoritario,
-                            label: {
-                                EmptyView()
-                            })
-                        NavigationLink(
-                            destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),
-                            isActive: $navigateToListInfoView,
-                            label: {
-                                EmptyView()
-                            })
-                    }// --> Group
-                    .hidden()
-                )
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
-                .background(Color.white.opacity(0))
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            
+    
             ModalView(isShowing: $showModal)
             }// --> ZStack
             .frame(maxWidth: .infinity, maxHeight: .infinity)

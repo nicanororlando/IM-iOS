@@ -10,13 +10,10 @@ import Foundation
 import SwiftUI
 
 struct Cancion {
-    
-    //Definicion de variables
     var id: Int
     var name: String
     var favorite: Bool
 }
-
 
 ///Clase para albergar a los programadores
 ///Con esto no podemos acceder a los programadores desde la listview, primero accederemos a este modelo

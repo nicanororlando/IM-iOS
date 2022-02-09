@@ -2,11 +2,14 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "fondo9.jpeg"
+      "filename" : "grupo3.jpeg"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

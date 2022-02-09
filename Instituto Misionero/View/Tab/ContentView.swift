@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     init(){
-        UITabBar.appearance().isHidden = true
+        UITabBar.appearance().isHidden = false
     }
     
     var body: some View {

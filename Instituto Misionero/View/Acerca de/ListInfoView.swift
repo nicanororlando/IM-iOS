@@ -12,14 +12,14 @@ struct ListInfoView: View {
     @State var navigateToDonaciones = false
     @State var navigateToAcercaDe = false
     var navigateToListInfoView: Binding<Bool>
-    
+        
     var body: some View {
         NavigationView{
         ZStack{
-        Image("fondo13")
+        Image("grupo3")
             .resizable()
             .scaledToFill()
-            .opacity(0.4)
+            .opacity(0.3)
     	
             VStack(alignment: .leading){
             Button(action: {
@@ -28,27 +28,27 @@ struct ListInfoView: View {
                 HStack{
                     Image("icons8-atras")
                         .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                    Text("Back")
+                        .frame(width: 38, height: 38, alignment: .center)
+                    Text("Inicio")
                         .font(.system(size: 23))
-                        .offset(x: -13)
+                        .offset(x: -15)
                     Spacer()
                 }
                 .frame(width: 400, height: 60, alignment: .center)
                 .foregroundColor(.black)
-                }.padding(4)
+            }.padding(7)
             
             Group(){
-                VStack (alignment: .leading){
-                    Text("Redes sociales")
-                        .font(.title)
-                        .fontWeight(.light)
-                        .padding(.top, 10)
-                        .padding(.bottom, -10)
-                    Divider()
-                        .frame(width: 300)
-                        .background(Color.black)
-                }.padding(.leading, 15)
+            VStack (alignment: .leading){
+                Text("Redes sociales")
+                    .font(.title)
+                    .fontWeight(.light)
+                    .padding(.top, 10)
+                    .padding(.bottom, -10)
+                Divider()
+                    .frame(width: 300)
+                    .background(Color.black)
+            }.padding(.leading, 20)
                 
             // Instagram //
             Button(action: {
@@ -65,6 +65,7 @@ struct ListInfoView: View {
             }) {
                 Boton(image: "instagram", title: "Instagram", subTitle: "@instituto.misionero")
             }
+                
             // Facebook //
             Button(action: {
                 let url = URL(string: "fb://profile/<PAGE_ID>")!
@@ -96,10 +97,10 @@ struct ListInfoView: View {
             }) {
                 Boton(image: "youtube", title: "Youtube", subTitle: "youtube.com/institutomisionero")
             }.padding(.bottom, 15)
-            }// --> Group
+            }// --> Group redes sociales
             
             Group(){
-            VStack (alignment: .leading){
+            VStack(alignment: .leading){
                 Text("Sobre nosotros")
                     .font(.title)
                     .fontWeight(.light)
@@ -108,70 +109,74 @@ struct ListInfoView: View {
                 Divider()
                     .frame(width: 300)
                     .background(Color.black)
-            }.padding(.leading, 15)
+            }.padding(.leading, 20)
+            
+            Group(){
                 
-            Button(action: {
-                self.navigateToAcercaDe = true
-            }) {
-                HStack{
-                    Image("informacion")
-                        .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .foregroundColor(Color(UIColor(named: "dark-red")!))
-                    Text("Acerca de esta App")
-                        .foregroundColor(Color.black)
-                        .font(.title)
-                }
-            }
-            .padding(5)
-            .padding(.top, 7)
-            .padding(.leading, 10)
+            // Acerca de //
+            NavigationLink(
+                destination: AcercaDeLaApp(navigateToListInfoView: navigateToListInfoView,
+                    navigateToAcercaDe: $navigateToAcercaDe),
+                isActive: $navigateToAcercaDe,
+                label: {
+                    Button(action: {
+                        self.navigateToAcercaDe = true
+                    }) {
+                        HStack{
+                            Image("informacion")
+                                .resizable()
+                                .frame(width: 40, height: 40, alignment: .center)
+                                .foregroundColor(Color(UIColor(named:
+                                    "dark-red")!))
+                                .padding(.trailing,5)
+                            Text("Acerca de esta App")
+                                .foregroundColor(Color.black)
+                                .font(.title)
+                        }
+                    }
+                    .padding(5)
+                    .padding(.top, 7)
+                    .padding(.leading, 15)
+            })
             
             // Donaciones //
-            Button(action: {
-                self.navigateToDonaciones = true
-            }) {
-                HStack{
-                    Image("pago")
-                        .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .foregroundColor(Color(UIColor(named: "dark-red")!))
-                    Text("Donaciones")
-                        .foregroundColor(Color.black)
-                        .font(.title)
-                }
-
-                .padding(5)
-                .padding(.leading, 10)
-                }
-            }// --> Group
+            NavigationLink(
+                destination: Donaciones(navigateToListInfoView: navigateToListInfoView, navigateToDonaciones: $navigateToDonaciones),
+                isActive: $navigateToDonaciones,
+                label: {
+                    Button(action: {
+                        self.navigateToDonaciones = true
+                    }) {
+                        HStack{
+                            Image("pago")
+                                .resizable()
+                                .frame(width: 40, height: 40, alignment: .center)
+                                .foregroundColor(Color(UIColor(named: "dark-red")!))
+                                .padding(.trailing, 5)
+                            Text("Donaciones")
+                                .foregroundColor(Color.black)
+                                .font(.title)
+                        }
+                        .padding(5)
+                        .padding(.leading, 15)
+                    }
+            })
+                
+            }// --> Group sobre nosotros
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+                
+            }// --> Group potoca
             Spacer()
+               
           }// --> VStack potoca
-          .background(
-              Group{
-                  NavigationLink(
-                      destination: AcercaDeLaApp(),
-                      isActive: $navigateToAcercaDe,
-                      label: {
-                          EmptyView()
-                      })
-                  NavigationLink(
-                      destination: Donaciones(),
-                      isActive: $navigateToDonaciones,
-                      label: {
-                          EmptyView()
-                      })
-              }// --> Group
-              .hidden()
-          )
-          .navigationBarTitle("")
-          .navigationBarHidden(true)
-          .background(Color.white.opacity(0))
-          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-          //.padding()
+          
         }// --> ZStack
-    }// --> Nav view
-}// --> body
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+    }// --> body
 }
 
 struct Boton: View {
@@ -185,6 +190,7 @@ struct Boton: View {
             Image(image)
                 .resizable()
                 .frame(width: 40, height: 40, alignment: .center)
+                .padding(.trailing, 5)
             VStack(alignment: .leading){
                 Text(title)
                     .font(.title)
@@ -196,7 +202,7 @@ struct Boton: View {
         .frame(width: 400, height: 60, alignment: .center)
         .foregroundColor(.black)
         .padding(5)
-        .padding(.leading, 10)
+        .padding(.leading, 15)
     }
 }
 

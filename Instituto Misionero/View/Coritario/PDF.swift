@@ -68,29 +68,13 @@ struct ListDetails: View {
 
 struct PDF: View {
     var cancion: Cancion
-    @Binding var favorite: Bool
     
     var body: some View {
-        VStack {
-            Button(action: {
-                self.favorite.toggle()
-            }) {
-                if favorite{
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                }else{
-                    Image(systemName: "star")
-                        .foregroundColor(.black)
-                }
-            }
-            //.offset(x:0, y: 0)
-            .frame(width: 50, height: 50, alignment: .center)
-            
             PDFKitRepresentedView(cancion: cancion)
                 .frame(width: 600, height: 800, alignment: .center)
-        }
     }
 }
+
 
 struct PDFKitRepresentedView: UIViewRepresentable {
     let cancion: Cancion

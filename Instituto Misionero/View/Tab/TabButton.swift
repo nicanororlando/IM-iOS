@@ -24,12 +24,12 @@ struct TabButton: View {
                     .resizable()
                     .renderingMode(.template)
                     .frame(width: 25, height: 25)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                 
                 if(selected == title){
                     Text(title)
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
             }
             .padding(.vertical,10)

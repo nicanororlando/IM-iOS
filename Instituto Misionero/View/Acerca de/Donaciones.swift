@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct Donaciones: View {
+    
+    var navigateToListInfoView: Binding<Bool>?
+    var navigateToDonaciones: Binding<Bool>
+    
     var body: some View {
         ZStack{
             Image("fondo13")
@@ -17,6 +21,24 @@ struct Donaciones: View {
                 .opacity(0.3)
             
         VStack{
+            Button(action: {
+                self.navigateToDonaciones.wrappedValue = false
+            }) {
+                HStack{
+                    Image("icons8-atras")
+                        .resizable()
+                        .frame(width: 38, height: 38, alignment: .center)
+                    Text("Back")
+                        .font(.system(size: 23))
+                        .offset(x: -17)
+                    Spacer()
+                }
+                .frame(width: 400, height: 60, alignment: .center)
+                .foregroundColor(.black)
+            }.padding(4)// --> Back button
+            
+            Spacer()
+            
             HStack{
                 Image("icono_im")
                     .resizable()
@@ -32,9 +54,7 @@ struct Donaciones: View {
                     .fontWeight(.semibold)
           	          .font(.largeTitle)
                 }
-            }.frame(width: .minimum(400, 400), height: 130, alignment: .center)
-            
-            Text("")
+            }.frame(width: .minimum(400, 400), height: 130, alignment: .center).padding(.bottom, 10)// --> Icono + titulo
             
             VStack{
                 Text("Hermanos mios amados, estad firmes y")
@@ -44,8 +64,7 @@ struct Donaciones: View {
                 Text("1 Corintios 15:58")
                     .fontWeight(.bold)
                     .padding(8)
-            }
-            Text("")
+            }.padding(.bottom, 10)// --> VStack versiculo
             
             VStack{
                 Text("Pasos para la donacion online: ")
@@ -69,14 +88,20 @@ struct Donaciones: View {
                     .padding(.top, 15)
                 Text("Facultad de ciencias de la salud")
                     .fontWeight(.light)
-            }
-        }// --> VStack
-    }// --> ZStack
-}
+            }// --> VStack donaciones
+            
+            Spacer()
+            Spacer()
+        }// --> VStack potoca
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+    }// --> ZStack potoca
+}// --> View
 }
 
 struct Donaciones_Previews: PreviewProvider {
     static var previews: some View {
-        Donaciones()
+        Donaciones(navigateToDonaciones: .constant(true))
     }
 }
