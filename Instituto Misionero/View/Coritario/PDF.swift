@@ -10,6 +10,166 @@ import SwiftUI
 import UIKit
 import PDFKit
 
+struct PDF: View {
+    var cancion: Cancion
+    @Binding var navigateToPdf: Bool
+    
+    var body: some View {
+        ZStack{
+            VStack{
+            Spacer()
+            Button(action: {
+                           self.navigateToPdf = false
+                       }) {
+                           HStack{
+                               Image("icons8-atras")
+                                   .resizable()
+                                   .frame(width: 38, height: 38, alignment: .center)
+                               Text("Back")
+                                   .font(.system(size: 23))
+                                   .offset(x: -17)
+                               Spacer()
+                           }
+                           .frame(width: 400, height: 60, alignment: .center)
+                           .foregroundColor(.black)
+                       }.padding(4)// --> Back button
+            PDFKitRepresentedView(cancion: cancion)
+                .frame(width: 600, height: 800, alignment: .center)
+        }// --> VStack
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        }// --> ZStack
+    }// --> View
+}
+
+
+struct PDFKitRepresentedView: UIViewRepresentable {
+    let cancion: Cancion
+    
+    private var pdfView = PDFView()
+
+    init(cancion: Cancion) {
+        self.cancion = cancion
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<PDFKitRepresentedView>) -> PDFKitRepresentedView.UIViewType {
+        
+        /// Create a `PDFView` and set its `PDFDocument`.
+        pdfView.document = PDFDocument(url: Bundle.main.bundleURL.appendingPathComponent("coritario.pdf"))
+        return pdfView
+    }// --> Vista del pdf
+
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PDFKitRepresentedView>) {
+        
+        let i = cancion.id - 1
+        var page = self.pdfView.document?.page(at: i)
+
+        if(i == 17 || i == 28 || i == 40 || i == 61 || i == 68 || i == 148) {
+            
+            if (i == 17) {
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                pdfView.go(to: (page!))
+            }
+            else if (i == 28) {
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+1)
+                pdfView.go(to: (page!))
+            }
+            else if (i == 40){
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+2)
+                pdfView.go(to: (page!))
+            }
+            else if (i == 61){
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+3)
+                pdfView.go(to: (page!))
+            }
+            else if(i == 68){
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+4)
+                pdfView.go(to: (page!))
+            }
+            else {
+                pdfView.displayMode = .singlePage
+                pdfView.usePageViewController(true)
+                page = self.pdfView.document?.page(at: i+5)
+                pdfView.go(to: (page!))
+            }
+        }// --> Logica para cuando las canciones tienen dos paginas
+        else if(i >= 18 && i <= 27) {
+            page = self.pdfView.document?.page(at: i+1)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 29 && i <= 39){
+            page = self.pdfView.document?.page(at: i+2)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 41 && i <= 60) {
+            page = self.pdfView.document?.page(at: i+3)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 62 && i <= 67) {
+            page = self.pdfView.document?.page(at: i+4)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if(i >= 69 && i <= 148) {
+            page = self.pdfView.document?.page(at: i+5)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else if (i >= 149){
+            page = self.pdfView.document?.page(at: i+6)
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        else{
+            pdfView.go(to: (page!))
+            pdfView.displaysPageBreaks = true
+            pdfView.displayMode = .singlePage
+        }
+        pdfView.autoScales = true
+    }// -->UpdateUIView
+}// --> PDFKit
+
+struct PDF_Preview: PreviewProvider {
+    static var previews: some View {
+        PDFKitRepresentedView(cancion: Cancion(id: 3,
+                                               name: "Ejemplo",
+                                               favorite: false))
+            .frame(width: 600, height: 600, alignment: .center)
+    }
+}
+
+
+/*
+struct ListDetails_Previews: PreviewProvider {
+    static var previews: some View {
+        PDF(programmer: Programmer(id: 5,
+        name: "Nicanor",
+        languages: "Swift",
+        avatar: Image("nose"),
+        favorite: false), favorite: .constant(false))
+    }
+}
+*/
+
 /*
 struct ListDetails: View {
     
@@ -62,143 +222,6 @@ struct ListDetails: View {
             
             Spacer()
         }
-    }
-}
-*/
-
-struct PDF: View {
-    var cancion: Cancion
-    
-    var body: some View {
-            PDFKitRepresentedView(cancion: cancion)
-                .frame(width: 600, height: 800, alignment: .center)
-    }
-}
-
-
-struct PDFKitRepresentedView: UIViewRepresentable {
-    let cancion: Cancion
-    
-    private var pdfView = PDFView()
-
-    init(cancion: Cancion) {
-        self.cancion = cancion
-    }
-
-    func makeUIView(context: UIViewRepresentableContext<PDFKitRepresentedView>) -> PDFKitRepresentedView.UIViewType {
-        
-        /// Create a `PDFView` and set its `PDFDocument`.
-        pdfView.document = PDFDocument(url: Bundle.main.bundleURL.appendingPathComponent("coritario.pdf"))
-        return pdfView
-    }
-
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PDFKitRepresentedView>) {
-        
-        let i = cancion.id - 1
-        var page = self.pdfView.document?.page(at: i)
-
-        if(i == 17 || i == 28 || i == 40 || i == 61 || i == 68 || i == 148) {
-            
-            if (i == 17) {
-                pdfView.displayMode = .singlePage
-                pdfView.usePageViewController(true)
-                pdfView.go(to: (page!))
-            }
-            else if (i == 28) {
-                pdfView.displayMode = .singlePage
-                pdfView.usePageViewController(true)
-                page = self.pdfView.document?.page(at: i+1)
-                pdfView.go(to: (page!))
-            }
-            else if (i == 40){
-                pdfView.displayMode = .singlePage
-                pdfView.usePageViewController(true)
-                page = self.pdfView.document?.page(at: i+2)
-                pdfView.go(to: (page!))
-            }
-            else if (i == 61){
-                pdfView.displayMode = .singlePage
-                pdfView.usePageViewController(true)
-                page = self.pdfView.document?.page(at: i+3)
-                pdfView.go(to: (page!))
-            }
-            else if(i == 68){
-                pdfView.displayMode = .singlePage
-                pdfView.usePageViewController(true)
-                page = self.pdfView.document?.page(at: i+4)
-                pdfView.go(to: (page!))
-            }
-            else {
-                pdfView.displayMode = .singlePage
-                pdfView.usePageViewController(true)
-                page = self.pdfView.document?.page(at: i+5)
-                pdfView.go(to: (page!))
-            }
-        }
-        else if(i >= 18 && i <= 27) {
-            page = self.pdfView.document?.page(at: i+1)
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        else if(i >= 29 && i <= 39){
-            page = self.pdfView.document?.page(at: i+2)
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        else if(i >= 41 && i <= 60) {
-            page = self.pdfView.document?.page(at: i+3)
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        else if(i >= 62 && i <= 67) {
-            page = self.pdfView.document?.page(at: i+4)
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        else if(i >= 69 && i <= 148) {
-            page = self.pdfView.document?.page(at: i+5)
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        else if (i >= 149){
-            page = self.pdfView.document?.page(at: i+6)
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        else{
-            pdfView.go(to: (page!))
-            pdfView.displaysPageBreaks = true
-            pdfView.displayMode = .singlePage
-        }
-        pdfView.autoScales = true
-    }
-}
-
-/*
-struct PDF_Preview: PreviewProvider {
-    static var previews: some View {
-        PDFKitRepresentedView(cancion: Cancion(id: 3,
-                                               name: "Ejemplo",
-                                               favorite: false))
-            .frame(width: 600, height: 600, alignment: .center)
-    }
-}
-*/
-
-/*
-struct ListDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        PDF(programmer: Programmer(id: 5,
-        name: "Nicanor",
-        languages: "Swift",
-        avatar: Image("nose"),
-        favorite: false), favorite: .constant(false))
     }
 }
 */

@@ -15,7 +15,7 @@
 		262555FB272B80C300D6DA1A /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262555FA272B80C300D6DA1A /* TabBar.swift */; };
 		262555FD272B83C200D6DA1A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262555FC272B83C200D6DA1A /* TabButton.swift */; };
 		262555FF272B8FDE00D6DA1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262555FE272B8FDE00D6DA1A /* ContentView.swift */; };
-		262556012735691200D6DA1A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262556002735691200D6DA1A /* ListView.swift */; };
+		262556012735691200D6DA1A /* Coritario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262556002735691200D6DA1A /* Coritario.swift */; };
 		262572BC27B079DF00F675EF /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262572BB27B079DF00F675EF /* ModalView.swift */; };
 		262ED9EB271F8EB600023459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262ED9EA271F8EB600023459 /* AppDelegate.swift */; };
 		262ED9EF271F8EB600023459 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262ED9EE271F8EB600023459 /* Home.swift */; };
@@ -38,7 +38,7 @@
 		262555FA272B80C300D6DA1A /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		262555FC272B83C200D6DA1A /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		262555FE272B8FDE00D6DA1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		262556002735691200D6DA1A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		262556002735691200D6DA1A /* Coritario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coritario.swift; sourceTree = "<group>"; };
 		262572BB27B079DF00F675EF /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		262ED9E7271F8EB600023459 /* Instituto Misionero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instituto Misionero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		262ED9EA271F8EB600023459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				262EDA0B271F9BEB00023459 /* RowView.swift */,
-				262556002735691200D6DA1A /* ListView.swift */,
+				262556002735691200D6DA1A /* Coritario.swift */,
 				262EDA07271F971400023459 /* PDF.swift */,
 			);
 			path = Coritario;
@@ -267,7 +267,7 @@
 				262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */,
 				260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */,
 				262555FD272B83C200D6DA1A /* TabButton.swift in Sources */,
-				262556012735691200D6DA1A /* ListView.swift in Sources */,
+				262556012735691200D6DA1A /* Coritario.swift in Sources */,
 				260BA9B52738705F0055448D /* ListInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

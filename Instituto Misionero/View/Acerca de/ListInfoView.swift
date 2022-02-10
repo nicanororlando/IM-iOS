@@ -115,8 +115,7 @@ struct ListInfoView: View {
                 
             // Acerca de //
             NavigationLink(
-                destination: AcercaDeLaApp(navigateToListInfoView: navigateToListInfoView,
-                    navigateToAcercaDe: $navigateToAcercaDe),
+                destination: AcercaDeLaApp(navigateToAcercaDe: $navigateToAcercaDe),
                 isActive: $navigateToAcercaDe,
                 label: {
                     Button(action: {
@@ -141,7 +140,7 @@ struct ListInfoView: View {
             
             // Donaciones //
             NavigationLink(
-                destination: Donaciones(navigateToListInfoView: navigateToListInfoView, navigateToDonaciones: $navigateToDonaciones),
+                destination: Donaciones(navigateToDonaciones: $navigateToDonaciones),
                 isActive: $navigateToDonaciones,
                 label: {
                     Button(action: {

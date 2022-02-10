@@ -10,7 +10,6 @@ import SwiftUI
 
 struct Donaciones: View {
     
-    var navigateToListInfoView: Binding<Bool>?
     var navigateToDonaciones: Binding<Bool>
     
     var body: some View {

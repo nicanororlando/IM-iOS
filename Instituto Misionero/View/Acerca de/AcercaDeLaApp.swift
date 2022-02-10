@@ -10,7 +10,6 @@ import SwiftUI
 
 struct AcercaDeLaApp: View {
     
-    var navigateToListInfoView: Binding<Bool>?
     @Binding var navigateToAcercaDe: Bool
     
     var body: some View {

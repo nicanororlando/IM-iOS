@@ -48,12 +48,11 @@ struct Home: View {
                 }
                 .padding(.bottom,25)
                 .buttonStyle(filledRoundedCornerButtonStyle(font: .largeTitle, padding: 10, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.7), fgColor: .white, cornerRadius: 20, opacity: 1.0, X: 0, Y: 0))
-                // END Im //
                 
                 Group(){
                 // CORITARIO //
                 NavigationLink(
-                    destination: ListView(),
+                    destination: Coritario(navigateToCoritario: $navigateToCoritario).environmentObject(CancionesModelData()),
                     isActive: $navigateToCoritario,
                     label: {
                         Button(action: {
@@ -68,7 +67,6 @@ struct Home: View {
                         .padding(.bottom,10)
                         .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 20, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
                     })	
-                // END Coritario //
                 
                 // ACERCA DE //
                 NavigationLink(
@@ -98,11 +96,12 @@ struct Home: View {
                 }// --> VStack
     
             ModalView(isShowing: $showModal)
+            
             }// --> ZStack
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .statusBar(hidden: true)
         }// --> Nav view
-    }
+    }// --> Body
 }
 
 struct Home_Previews: PreviewProvider {

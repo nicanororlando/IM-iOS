@@ -38,7 +38,6 @@ struct ModalView: View {
         return res
     }
 
-    
     var body: some View {
         ZStack(alignment: .bottom){
             if(isShowing){
@@ -60,15 +59,16 @@ struct ModalView: View {
 var mainView: some View {
     VStack{
         ///Handle
-        ZStack {
+        ZStack{
             Capsule()
                 .frame(width: 45, height: 6)
-        }
+        }// --> ZStack Capsule
         .frame(height: 35)
         .frame(maxWidth: .infinity)
             .background(Color.white.opacity(0.00001)) ///Importante para el dragging
             .gesture(dragGesture)
         
+        // Vista de drag gesture //
         ZStack{
             VStack(alignment: .center){
                 HStack{
@@ -88,8 +88,8 @@ var mainView: some View {
                             .fixedSize(horizontal: false, vertical: true)
                             .foregroundColor(Color(UIColor(named: "dark-grey")!))
                         
-                        }// -> VStack
-                }// -> HStack
+                        }// -> VStack IM
+                }// -> HStack icono + IM
                 .padding(.vertical, 10)
                 
                 Group{
@@ -124,28 +124,28 @@ var mainView: some View {
                 }
                 .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "dark-red")!).opacity(0.8), bgColor2: Color(UIColor(named: "dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -30, linewidth: 0))
                 .padding(.bottom, 20)
-                    }// --> Group
+                    }// --> Group texto
 
-                }// --> VStack
-            }// --> ZStack
-            .frame(maxHeight: .infinity)
-            .padding(.top, paddingTop)
-            .padding(.bottom, paddingBottom)
-            .background(Color.white.opacity(0.6))
-        }// --> VStack
-        .frame(height: curHeight)
-        .frame(maxWidth: .infinity)
-        .background(
-            ///Rounded corners only top
-            ZStack{
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .frame(width: screenRect.size.width, height: curHeight)
-            }
-            .foregroundColor(Color(UIColor(named: "dark-red")!).opacity(0.7))
+            }// --> VStack interno
+        }// --> ZStack
+        .frame(maxHeight: .infinity)
+        .padding(.top, paddingTop)
+        .padding(.bottom, paddingBottom)
+        .background(Color.white.opacity(0.6))
+        
+    }// --> VStack potoca
+    .frame(height: curHeight)
+    .frame(maxWidth: .infinity)
+    .background(// Bordes superiores redondeados
+        ZStack{
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .frame(width: screenRect.size.width, height: curHeight)
+        }
+        .foregroundColor(Color(UIColor(named: "dark-red")!).opacity(0.7))
         )
         .animation(isDragging ? nil  : .easeInOut(duration: 0.45))
         .onDisappear { self.curHeight = self.minHeight }
-    }// --> End mainView
+}// --> End mainView
     
     @State private var prevDragTranslation = CGSize.zero
 

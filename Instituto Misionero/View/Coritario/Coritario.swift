@@ -8,32 +8,57 @@
 
 import SwiftUI
 
-struct ListView: View {
+struct Coritario: View {
     
     @State var searchText = ""
     @State var isSearching = false
+    
+    @State var navigateToPdf = false
+    var navigateToCoritario: Binding<Bool>
     
     ///Para acceder a los canciones del modelo
     @EnvironmentObject var cancionesModelData: CancionesModelData
     
     var body: some View {
-        NavigationView {
+        ZStack{
             VStack{
+                Button(action: {
+                    self.navigateToCoritario.wrappedValue = false
+                }) {
+                    HStack{
+                        Image("icons8-atras")
+                            .resizable()
+                            .frame(width: 38, height: 38, alignment: .center)
+                        Text("Back")
+                            .font(.system(size: 23))
+                            .offset(x: -17)
+                        Spacer()
+                    }
+                    .frame(width: 400, height: 60, alignment: .center)
+                    .foregroundColor(.black)
+                }.padding(4)// --> Back button
+                
+                Spacer()
+                
                 SearchView(searchText: $searchText, isSearching: $isSearching)
                 
                 ///Lista con filtro de favoritos y barra de busqueda
                 List(cancionesModelData.canciones.filter({        "\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
             
                     ///A donde queremos navegar, le pasamos a destination una instancia de la vista a la que queremos navegar
-                    NavigationLink(destination: PDF(cancion: cancion)) {
+                    NavigationLink(destination: PDF(cancion: cancion, navigateToPdf: self.$navigateToPdf)) {
                 	
                         ///Nombre de nuestra fila, pasandole cada uno de nuestros programadores de nuestro array. No hace falta que los definamos de nuestra lista
                         RowView(cancion: cancion)
                     }
                 }
-            }.navigationBarTitle("Coritario")
-        }
-    }
+            }// --> VStack potoca
+            .navigationBarTitle("")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
+            
+        }// --> ZStack
+    }// --> Body
 }
 
 struct SearchView: View {
@@ -93,10 +118,11 @@ struct SearchView: View {
         }
     }
 }
+
 /*
-struct ListView_Previews: PreviewProvider {
+struct Coritario_Previews: PreviewProvider {
     static var previews: some View {
-        ListView().environmentObject(CancionesModelData())
+        Coritario(navigateToCoritario: $navigateToCoritario).environmentObject(CancionesModelData())
     }
 }
 */

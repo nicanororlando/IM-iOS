@@ -20,8 +20,8 @@ struct TabBar: View {
             TabView(selection: $current){
                 Home()
                     .tag("Home")
-                ListView()
-                    .tag("Coritario")
+                //Coritario()
+                  //  .tag("Coritario")
                 ListInfoView(navigateToListInfoView: $navigateToListInfoView)
                     .tag("Acerca de")
             }
