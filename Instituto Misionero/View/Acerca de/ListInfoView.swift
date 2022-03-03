@@ -123,7 +123,7 @@ struct ListInfoView: View {
                     }) {
                         HStack{
                             Image("informacion")
-                                .resizable()
+                  	              .resizable()
                                 .frame(width: 40, height: 40, alignment: .center)
                                 .foregroundColor(Color(UIColor(named:
                                     "dark-red")!))
@@ -172,7 +172,8 @@ struct ListInfoView: View {
           }// --> VStack potoca
           
         }// --> ZStack
-        }.navigationBarBackButtonHidden(true)
+        }// --> NavigationView
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }// --> body

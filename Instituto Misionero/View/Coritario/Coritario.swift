@@ -12,6 +12,7 @@ struct Coritario: View {
     
     @State var searchText = ""
     @State var isSearching = false
+    @State var selectedCancion: Int? = nil
     
     @State var navigateToPdf = false
     var navigateToCoritario: Binding<Bool>
@@ -20,6 +21,7 @@ struct Coritario: View {
     @EnvironmentObject var cancionesModelData: CancionesModelData
     
     var body: some View {
+        NavigationView{
         ZStack{
             VStack{
                 Button(action: {
@@ -43,21 +45,25 @@ struct Coritario: View {
                 SearchView(searchText: $searchText, isSearching: $isSearching)
                 
                 ///Lista con filtro de favoritos y barra de busqueda
-                List(cancionesModelData.canciones.filter({        "\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
-            
-                    ///A donde queremos navegar, le pasamos a destination una instancia de la vista a la que queremos navegar
-                    NavigationLink(destination: PDF(cancion: cancion, navigateToPdf: self.$navigateToPdf)) {
-                	
-                        ///Nombre de nuestra fila, pasandole cada uno de nuestros programadores de nuestro array. No hace falta que los definamos de nuestra lista
-                        RowView(cancion: cancion)
+                List(cancionesModelData.canciones.filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
+
+                    NavigationLink(
+                    destination: PDF(cancion: cancion, navigateToPdf: self.$navigateToPdf)){
+                    
+                            RowView(cancion: cancion)
                     }
-                }
+                }// --> List
             }// --> VStack potoca
-            .navigationBarTitle("")
+            .navigationBarTitle("Coritario")
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
             
-        }// --> ZStack
+            }// --> ZStack
+        }// --> NavigationView
+        .navigationBarTitle("Coritario")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        
     }// --> Body
 }
 

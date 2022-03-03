@@ -12,33 +12,38 @@ import PDFKit
 
 struct PDF: View {
     var cancion: Cancion
+    //var navigateToPdf: Binding<Bool>
     @Binding var navigateToPdf: Bool
     
     var body: some View {
         ZStack{
             VStack{
+            
+            /*
             Spacer()
             Button(action: {
-                           self.navigateToPdf = false
-                       }) {
-                           HStack{
-                               Image("icons8-atras")
-                                   .resizable()
-                                   .frame(width: 38, height: 38, alignment: .center)
-                               Text("Back")
-                                   .font(.system(size: 23))
-                                   .offset(x: -17)
-                               Spacer()
-                           }
-                           .frame(width: 400, height: 60, alignment: .center)
-                           .foregroundColor(.black)
-                       }.padding(4)// --> Back button
+                self.navigateToPdf = false
+            }) {
+            HStack{
+                Image("icons8-atras")
+                    .resizable()
+                    .frame(width: 38, height: 38, alignment: .center)
+                Text("Back")
+                    .font(.system(size: 23))
+                    .offset(x: -17)
+                Spacer()
+                }
+            .frame(width: 400, height: 60, alignment: .center)
+            .foregroundColor(.black)
+            }.padding(4)// --> Back button
+ */
+            
             PDFKitRepresentedView(cancion: cancion)
                 .frame(width: 600, height: 800, alignment: .center)
         }// --> VStack
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(false)
+                .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(false)
         }// --> ZStack
     }// --> View
 }
