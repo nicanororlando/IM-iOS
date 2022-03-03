@@ -45,13 +45,12 @@ struct Coritario: View {
                 SearchView(searchText: $searchText, isSearching: $isSearching)
                 
                 ///Lista con filtro de favoritos y barra de busqueda
-                List(cancionesModelData.canciones.filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
+            List(cancionesModelData.canciones.filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
 
                     NavigationLink(
-                    destination: PDF(cancion: cancion, navigateToPdf: self.$navigateToPdf)){
-                    
-                            RowView(cancion: cancion)
-                    }
+                        destination: PDF(cancion: cancion, navigateToPdf: self.$navigateToPdf)){
+                                RowView(cancion: cancion)
+                    }// --> Nav Link
                 }// --> List
             }// --> VStack potoca
             .navigationBarTitle("Coritario")
@@ -65,7 +64,7 @@ struct Coritario: View {
         .navigationBarHidden(true)
         
     }// --> Body
-}
+}// --> View
 
 struct SearchView: View {
     

@@ -68,7 +68,7 @@ struct Home: View {
                         .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 20, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
                     })	
                 
-                // ACERCA DE //
+                // ACERCA DE NOSOTROS //
                 NavigationLink(
                     destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),
                     isActive: $navigateToListInfoView,
@@ -87,8 +87,6 @@ struct Home: View {
                 }// --> Group
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
-                
-                // END Acerca de  //
                 
                 Spacer()
                     .frame(height: 30)

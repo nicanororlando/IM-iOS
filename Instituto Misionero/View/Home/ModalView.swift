@@ -14,6 +14,8 @@ struct ModalView: View {
     @State private var curHeight: CGFloat = 450
     @State private var isDragging = false
     
+    @State var navigateToListInfoView = false
+    
     let screenRect: CGRect = UIScreen.main.bounds
     let minHeight: CGFloat = 450
     let maxHeight: CGFloat = 700
@@ -68,7 +70,7 @@ var mainView: some View {
             .background(Color.white.opacity(0.00001)) ///Importante para el dragging
             .gesture(dragGesture)
         
-        // Vista de drag gesture //
+        // Vista Interior //
         ZStack{
             VStack(alignment: .center){
                 HStack{
@@ -113,20 +115,27 @@ var mainView: some View {
                     .padding(.horizontal, 450)
                     .padding(.bottom, 40)
                     
-                Button(action: {
-                    
-                }) {
-                HStack{
-                    Image(systemName: "info.circle")
-                    Text("Mas info")
-                        .fontWeight(.bold)
+                // Boton Acerca de Nosotros //
+                NavigationLink(
+                destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),
+                isActive: $navigateToListInfoView,
+                label: {
+                    Button(action: {
+                        self.navigateToListInfoView = true
+                    }) {
+                    HStack{
+                        Image(systemName: "info.circle")
+                        Text("Mas info")
+                            .fontWeight(.bold)
+                        }
                     }
-                }
-                .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "dark-red")!).opacity(0.8), bgColor2: Color(UIColor(named: "dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -30, linewidth: 0))
-                .padding(.bottom, 20)
-                    }// --> Group texto
-
+                    .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color(UIColor(named: "dark-red")!).opacity(0.8), bgColor2: Color(UIColor(named: "dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -30, linewidth: 0))
+                    .padding(.bottom, 20)
+                })
+            
+                }// --> Group texto
             }// --> VStack interno
+            
         }// --> ZStack
         .frame(maxHeight: .infinity)
         .padding(.top, paddingTop)
@@ -140,9 +149,9 @@ var mainView: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 30, style: .continuous)
                 .frame(width: screenRect.size.width, height: curHeight)
-        }
+        }// --> ZStack
         .foregroundColor(Color(UIColor(named: "dark-red")!).opacity(0.7))
-        )
+        )// --> Background
         .animation(isDragging ? nil  : .easeInOut(duration: 0.45))
         .onDisappear { self.curHeight = self.minHeight }
 }// --> End mainView
@@ -178,6 +187,7 @@ var mainView: some View {
                 else { self.curHeight = self.maxHeight }
             }
     }// --> End dragGesture
+    
 }// --> End ModalView
 
 struct ModalView_Previews: PreviewProvider {
