@@ -43,8 +43,6 @@ struct Coritario: View {
                 Spacer()
                 
                 SearchView(searchText: $searchText, isSearching: $isSearching)
-                
-                ///Lista con filtro de favoritos y barra de busqueda
             List(cancionesModelData.canciones.filter({"\($0)".contains(searchText) || searchText.isEmpty}), id: \.id) { cancion in
 
                     NavigationLink(

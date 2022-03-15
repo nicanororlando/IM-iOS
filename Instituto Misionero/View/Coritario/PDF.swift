@@ -12,31 +12,11 @@ import PDFKit
 
 struct PDF: View {
     var cancion: Cancion
-    //var navigateToPdf: Binding<Bool>
     @Binding var navigateToPdf: Bool
     
     var body: some View {
         ZStack{
             VStack{
-            
-            /*
-            Spacer()
-            Button(action: {
-                self.navigateToPdf = false
-            }) {
-            HStack{
-                Image("icons8-atras")
-                    .resizable()
-                    .frame(width: 38, height: 38, alignment: .center)
-                Text("Back")
-                    .font(.system(size: 23))
-                    .offset(x: -17)
-                Spacer()
-                }
-            .frame(width: 400, height: 60, alignment: .center)
-            .foregroundColor(.black)
-            }.padding(4)// --> Back button
- */
             
             PDFKitRepresentedView(cancion: cancion)
                 .frame(width: 600, height: 800, alignment: .center)
@@ -162,71 +142,3 @@ struct PDF_Preview: PreviewProvider {
     }
 }
 
-
-/*
-struct ListDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        PDF(programmer: Programmer(id: 5,
-        name: "Nicanor",
-        languages: "Swift",
-        avatar: Image("nose"),
-        favorite: false), favorite: .constant(false))
-    }
-}
-*/
-
-/*
-struct ListDetails: View {
-    
-    var programmer: Programmer
-    
-    ///Binding es una variable que llego de otra clase y puede ser modificada
-    @Binding var favorite: Bool
-    
-    var body: some View {
-        
-        VStack {
-            programmer.avatar
-                .resizable()
-            
-            ///ajusto imagen del circle
-                .padding()
-            
-            ///para que llene el ancho
-                .scaledToFit()
-            
-            ///Circulo
-                .clipShape(Circle())
-                .overlay(Circle()
-                
-                ///borde de circle
-                .stroke(Color.black,
-                        lineWidth: 5))
-                .shadow(color: Color.red,
-                        radius: 20)
-            
-                ///ajusto total
-                .padding(20)
-            
-            Text(programmer.id.description).font(.largeTitle)
-            HStack{
-                Text(programmer.name).font(.largeTitle)
-                Button(action: {
-                    self.favorite.toggle()
-                }) {
-                    if favorite{
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                    }else{
-                        Image(systemName: "star")
-                            .foregroundColor(.black)
-                    }
-                }
-
-            }
-            
-            Spacer()
-        }
-    }
-}
-*/

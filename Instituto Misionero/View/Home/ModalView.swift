@@ -23,7 +23,7 @@ struct ModalView: View {
     let startOpacity: Double = 0.5
     let endOpacity: Double = 0.8
     
-    //Funcion para la opacidad, tiene dos tipos de retorno.
+    //Funcion para la opacidad
     var dragPercentage: Double {
         let res = Double((curHeight - minHeight) / (maxHeight - minHeight))
         return max(0, min(1, res))
@@ -60,7 +60,6 @@ struct ModalView: View {
 
 var mainView: some View {
     VStack{
-        ///Handle
         ZStack{
             Capsule()
                 .frame(width: 45, height: 6)
