@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Donaciones: View {
     
+    @ObservedObject var adapted = Adapted()
     var navigateToDonaciones: Binding<Bool>
     
     var body: some View {
@@ -20,22 +21,6 @@ struct Donaciones: View {
                 .opacity(0.3)
             
         VStack{
-            Button(action: {
-                self.navigateToDonaciones.wrappedValue = false
-            }) {
-                HStack{
-                    Image("icons8-atras")
-                        .resizable()
-                        .frame(width: 38, height: 38, alignment: .center)
-                    Text("Back")
-                        .font(.system(size: 23))
-                        .offset(x: -17)
-                    Spacer()
-                }
-                .frame(width: 400, height: 60, alignment: .center)
-                .foregroundColor(.black)
-            }.padding(4)// --> Back button
-            
             Spacer()
             
             HStack{
@@ -92,9 +77,26 @@ struct Donaciones: View {
             Spacer()
             Spacer()
         }// --> VStack potoca
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(false)
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(false)
+        .navigationBarItems(leading:
+            Button(action: {
+                self.navigateToDonaciones.wrappedValue = false
+            }) {
+                HStack{
+                    Image("icons8-atras")
+                        .resizable()
+                        .frame(width: adapted.adaptedWidth(curWidth: 31), height: adapted.adaptedWidth(curWidth: 31), alignment: .center)
+                    Text("Sobre nosotros")
+                        .font(.system(size: adapted.adaptedWidth(curWidth: 18)))
+                        .offset(x: -(adapted.adaptedWidth(curWidth: 15)))
+                    Spacer()
+                }
+                .frame(width: adapted.adaptedWidth(curWidth: 400), height: adapted.adaptedHeight(curHeight: 60), alignment: .center)
+                .foregroundColor(.black)
+            }.padding(4)// --> Back button
+        )// --> Nav items
     }// --> ZStack potoca
 }// --> View
 }

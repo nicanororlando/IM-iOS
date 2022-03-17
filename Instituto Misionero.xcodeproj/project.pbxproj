@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2606892227E2401300134506 /* Adapted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2606892127E2401300134506 /* Adapted.swift */; };
 		260BA9B52738705F0055448D /* ListInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9B42738705F0055448D /* ListInfoView.swift */; };
 		260BA9B7273870C50055448D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9B6273870C50055448D /* Item.swift */; };
 		260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA9B8274C0B5E0055448D /* AcercaDeLaApp.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2606892127E2401300134506 /* Adapted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapted.swift; sourceTree = "<group>"; };
 		260BA9B42738705F0055448D /* ListInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoView.swift; sourceTree = "<group>"; };
 		260BA9B6273870C50055448D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		260BA9B8274C0B5E0055448D /* AcercaDeLaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcercaDeLaApp.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		262ED9FE271F8F2A00023459 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2606892127E2401300134506 /* Adapted.swift */,
 				262555F9272B809100D6DA1A /* Tab */,
 				262EDA04271F963400023459 /* Home */,
 				262EDA03271F962500023459 /* Coritario */,
@@ -265,6 +268,7 @@
 				262ED9EF271F8EB600023459 /* Home.swift in Sources */,
 				262572BC27B079DF00F675EF /* ModalView.swift in Sources */,
 				262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */,
+				2606892227E2401300134506 /* Adapted.swift in Sources */,
 				260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */,
 				262555FD272B83C200D6DA1A /* TabButton.swift in Sources */,
 				262556012735691200D6DA1A /* Coritario.swift in Sources */,

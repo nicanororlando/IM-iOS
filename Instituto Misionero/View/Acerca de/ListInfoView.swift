@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct ListInfoView: View {
+    @ObservedObject var adapted = Adapted()
     @State var navigateToDonaciones = false
     @State var navigateToAcercaDe = false
     var navigateToListInfoView: Binding<Bool>
-        
+    
     var body: some View {
         NavigationView{
         ZStack{
@@ -22,21 +23,6 @@ struct ListInfoView: View {
             .opacity(0.3)
     	
             VStack(alignment: .leading){
-            Button(action: {
-                self.navigateToListInfoView.wrappedValue = false
-            }) {
-                HStack{
-                    Image("icons8-atras")
-                        .resizable()
-                        .frame(width: 38, height: 38, alignment: .center)
-                    Text("Inicio")
-                        .font(.system(size: 23))
-                        .offset(x: -15)
-                    Spacer()
-                }
-                .frame(width: 400, height: 60, alignment: .center)
-                .foregroundColor(.black)
-            }.padding(7)
             
             Group(){
             VStack (alignment: .leading){
@@ -52,7 +38,7 @@ struct ListInfoView: View {
                 
             // Instagram //
             Button(action: {
-                let url = URL(string: "fb://profile/<PAGE_ID>")!
+                let url = URL(string: "http://instagram.com/_u/instituto.misionero")!
                 let application = UIApplication.shared
                 
                 /// Check if the ig App is installed
@@ -68,7 +54,7 @@ struct ListInfoView: View {
                 
             // Facebook //
             Button(action: {
-                let url = URL(string: "fb://profile/<PAGE_ID>")!
+                let url = URL(string: "facebook.com/institutomisionero")!
                 let application = UIApplication.shared
                 
                 /// Check if the facebook App is installed
@@ -76,7 +62,7 @@ struct ListInfoView: View {
                     application.open(url)
                 } else {
                     /// If Facebook App is not installed, open Safari with Facebook Link
-                    application.open(URL(string: "https://de-de.facebook.com/apple")!)
+                    application.open(URL(string: "facebook.com/institutomisionero")!)
                 }
             }) {
                 Boton(image: "facebook", title: "Facebook", subTitle: "facebook.com/institutomisionero")
@@ -84,7 +70,7 @@ struct ListInfoView: View {
                 
             // Youtube //
             Button(action: {
-                let url = URL(string: "fb://profile/<PAGE_ID>")!
+                let url = URL(string: "youtube.com/institutomisionero")!
                 let application = UIApplication.shared
                 
                 /// Check if the yt App is installed
@@ -170,11 +156,30 @@ struct ListInfoView: View {
             Spacer()
                
           }// --> VStack potoca
-          
+          .navigationBarBackButtonHidden(true)
+          .navigationBarTitle("", displayMode: .inline)
+          .navigationBarHidden(false)
+          .navigationBarItems(leading:
+              Button(action: {
+              self.navigateToListInfoView.wrappedValue = false
+          }) {
+              HStack{
+                  Image("icons8-atras")
+                      .resizable()
+                      .frame(width: adapted.adaptedWidth(curWidth: 31), height: adapted.adaptedWidth(curWidth: 31), alignment: .center)
+                  Text("im")
+                      .font(.system(size: adapted.adaptedWidth(curWidth: 18)))
+                      .offset(x: -(adapted.adaptedWidth(curWidth: 15)))
+                  Spacer()
+              }
+              .frame(width: adapted.adaptedWidth(curWidth: 400), height: 60, alignment: .center)
+              .foregroundColor(.black)
+          }.padding(7))
+            
         }// --> ZStack
         }// --> NavigationView
-        .navigationBarBackButtonHidden(true)
         .navigationBarTitle("")
+        .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }// --> body
 }

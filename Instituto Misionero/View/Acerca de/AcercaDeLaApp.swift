@@ -11,6 +11,7 @@ import SwiftUI
 struct AcercaDeLaApp: View {
     
     @Binding var navigateToAcercaDe: Bool
+    @ObservedObject var adapted = Adapted()
     
     var body: some View {
         ZStack{
@@ -20,50 +21,36 @@ struct AcercaDeLaApp: View {
                 .opacity(0.3)
     
         VStack{
-            Button(action: {
-                self.navigateToAcercaDe = false
-            }) {
-                HStack{
-                    Image("icons8-atras")
-                        .resizable()
-                        .frame(width: 38, height: 38, alignment: .center)
-                    Text("Back")
-                        .font(.system(size: 23))
-                        .offset(x: -17)
-                    Spacer()
-                }
-                .frame(width: 400, height: 60, alignment: .center)
-                .foregroundColor(.black)
-            }.padding(4)// --> Back button
-            
             Spacer()
             
             Group(){
             Image("icono_im")
+                .resizable()
+                .frame(width: adapted.adaptedHeight(curHeight: 250), height: adapted.adaptedHeight(curHeight: 250))
                 .padding(.bottom, -10)
             HStack{
                 Text("Instituto")
                     .foregroundColor(Color(UIColor(named: "dark-grey")!))
                     .fontWeight(.semibold)
-                    .font(.largeTitle)
+                    .font(.system(size: adapted.adaptedWidth(curWidth: 27)))
                 Text("Misionero")
                     .foregroundColor(Color(UIColor(named: "dark-red")!))
                     .fontWeight(.semibold)
-                    .font(.largeTitle)
+                    .font(.system(size: adapted.adaptedWidth(curWidth: 27)))
             }
-            }.padding(.bottom, 10)// --> Group
+            }.padding(.bottom, adapted.adaptedHeight(curHeight: 10))// --> Group
             
             Group(){
             VStack{
                 Text("Desarrolado por: ")
-                    .font(.system(size: 20))
+                    .font(.system(size: adapted.adaptedWidth(curWidth: 20)))
                 Button(action: {
                     let url = URL(string: "mailto:nicanororlando@gmail.com?subject=Consulta - Aplicacion IM")!
                     let application = UIApplication.shared
                     application.open(url)
                 }) {
                     Text("nicanororlando@gmail.com")
-                        .font(.system(size: 20))
+                        .font(.system(size: adapted.adaptedWidth(curWidth: 20)))
                 }
             }.padding(.bottom, 10)// --> VStack info desarrollador
             
@@ -95,21 +82,40 @@ struct AcercaDeLaApp: View {
             }) {
                 Text("¡Califica esta App!")
             }
-            .buttonStyle(filledRoundedCornerButtonStyle(padding: 15, cornerRadius: 10, linewidth: 0))
+            .buttonStyle(filledRoundedCornerButtonStyle(padding: adapted.adaptedHeight(curHeight: 15), cornerRadius: 10, linewidth: 0))
             }// -> Group
             
             Spacer()
             Spacer()
         }// --> VStack
         .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-    }// --> ZStack
-}// --> View
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(false)
+        .navigationBarItems(leading:
+            Button(action: {
+                self.navigateToAcercaDe = false
+            }) {
+                HStack{
+                    Image("icons8-atras")
+                        .resizable()
+                        .frame(width: adapted.adaptedWidth(curWidth: 31), height: adapted.adaptedWidth(curWidth: 31), alignment: .center)
+                    Text("Sobre nosotros")
+                        .font(.system(size: adapted.adaptedWidth(curWidth: 18)))
+                        .offset(x: -(adapted.adaptedWidth(curWidth: 15)))
+                    Spacer()
+                }
+                .frame(width: adapted.adaptedWidth(curWidth: 400), height: adapted.adaptedHeight(curHeight: 60), alignment: .center)
+                .foregroundColor(.black)
+            }.padding(4)// --> Back button
+          )// --> Nav items
+            
+      }// --> ZStack
+  }// --> View
 }
 
 struct AcercaDeLaApp_Previews: PreviewProvider {
     static var previews: some View {
         AcercaDeLaApp(navigateToAcercaDe: .constant(true))
+        .previewDevice("iPhone 8")
     }
 }

@@ -19,27 +19,12 @@ struct Coritario: View {
     
     ///Para acceder a los canciones del modelo
     @EnvironmentObject var cancionesModelData: CancionesModelData
+    @ObservedObject var adapted = Adapted()
     
     var body: some View {
         NavigationView{
         ZStack{
             VStack{
-                Button(action: {
-                    self.navigateToCoritario.wrappedValue = false
-                }) {
-                    HStack{
-                        Image("icons8-atras")
-                            .resizable()
-                            .frame(width: 38, height: 38, alignment: .center)
-                        Text("Back")
-                            .font(.system(size: 23))
-                            .offset(x: -17)
-                        Spacer()
-                    }
-                    .frame(width: 400, height: 60, alignment: .center)
-                    .foregroundColor(.black)
-                }.padding(4)// --> Back button
-                
                 Spacer()
                 
                 SearchView(searchText: $searchText, isSearching: $isSearching)
@@ -51,16 +36,32 @@ struct Coritario: View {
                     }// --> Nav Link
                 }// --> List
             }// --> VStack potoca
-            .navigationBarTitle("Coritario")
             .navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
+            .navigationBarTitle("Coritario", displayMode: .inline)
+            .navigationBarHidden(false)
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.navigateToCoritario.wrappedValue = false
+                }) {
+                    HStack{
+                        Image("icons8-atras")
+                            .resizable()
+                            .frame(width: adapted.adaptedWidth(curWidth: 31), height: adapted.adaptedWidth(curWidth: 31), alignment: .center)
+                        Text("im")
+                            .font(.system(size: adapted.adaptedWidth(curWidth: 18)))
+                            .offset(x: -(adapted.adaptedWidth(curWidth: 15)))
+                        Spacer()
+                    }
+                    .frame(width: adapted.adaptedWidth(curWidth: 400), height: adapted.adaptedHeight(curHeight: 60), alignment: .center)
+                    .foregroundColor(.black)
+                }.padding(4)// --> Back button
+            )// --> Nav items
             
             }// --> ZStack
         }// --> NavigationView
         .navigationBarTitle("Coritario")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-        
     }// --> Body
 }// --> View
 

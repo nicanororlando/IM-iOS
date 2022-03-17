@@ -15,6 +15,8 @@ struct Home: View {
     @State var navigateToCoritario = false
     @State var navigateToListInfoView = false
     
+    @ObservedObject var adapted = Adapted()
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -85,15 +87,15 @@ struct Home: View {
                         .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color.white.opacity(0.6), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
                     })
                 }// --> Group
-                .navigationBarTitle("")
+                .navigationBarTitle("instituto misionero", displayMode: .inline)
                 .navigationBarHidden(true)
                 
                 Spacer()
-                    .frame(height: 30)
+                    .frame(height: adapted.adaptedHeight(curHeight: 30))
                 
                 }// --> VStack
     
-            ModalView(isShowing: $showModal)
+                ModalView(isShowing: $showModal, curHeight: adapted.adaptedHeight(curHeight: 450))
             
             }// --> ZStack
             .frame(maxWidth: .infinity, maxHeight: .infinity)

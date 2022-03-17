@@ -14,16 +14,31 @@ struct PDF: View {
     var cancion: Cancion
     @Binding var navigateToPdf: Bool
     
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+
+    func adaptedWidth(curWidth: CGFloat) -> CGFloat {
+        let percentajeWidth = curWidth / 414
+        let adaptedWidth = percentajeWidth * screenWidth
+        return adaptedWidth
+    }
+    func adaptedHeight(curHeight: CGFloat) -> CGFloat {
+        let percentajeHeight = curHeight / 896
+        let adaptedHeight = percentajeHeight * screenHeight
+        return CGFloat(adaptedHeight)
+    }
+    
     var body: some View {
         ZStack{
             VStack{
             
             PDFKitRepresentedView(cancion: cancion)
-                .frame(width: 600, height: 800, alignment: .center)
+                .frame(width: adaptedWidth(curWidth: 660), height: adaptedHeight(curHeight: 880), alignment: .center)
         }// --> VStack
         .navigationBarBackButtonHidden(false)
-                .navigationBarTitle("", displayMode: .inline)
+        .navigationBarTitle("", displayMode: .inline)
         .navigationBarHidden(false)
+	
         }// --> ZStack
     }// --> View
 }

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //SETUP
         setupView()
         
+        UINavigationBar.appearance().tintColor = UIColor.black
         return true
     }
     
