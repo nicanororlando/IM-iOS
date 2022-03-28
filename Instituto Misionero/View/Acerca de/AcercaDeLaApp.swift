@@ -108,7 +108,7 @@ struct AcercaDeLaApp: View {
                 .foregroundColor(.black)
             }.padding(4)// --> Back button
           )// --> Nav items
-            
+    
       }// --> ZStack
   }// --> View
 }

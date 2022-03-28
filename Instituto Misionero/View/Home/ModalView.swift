@@ -118,6 +118,7 @@ var mainView: some View {
                     .padding(.bottom, 40)
                     
                 if(adapted.screenHeight >= 700){
+                    
                     // Boton Acerca de Nosotros //
                     NavigationLink(
                     destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),

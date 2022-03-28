@@ -17,7 +17,6 @@ struct Coritario: View {
     @State var navigateToPdf = false
     var navigateToCoritario: Binding<Bool>
     
-    ///Para acceder a los canciones del modelo
     @EnvironmentObject var cancionesModelData: CancionesModelData
     @ObservedObject var adapted = Adapted()
     
@@ -62,6 +61,7 @@ struct Coritario: View {
         .navigationBarTitle("Coritario")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        
     }// --> Body
 }// --> View
 

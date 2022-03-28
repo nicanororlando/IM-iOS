@@ -28,16 +28,16 @@ struct Donaciones: View {
                     .resizable()
                     .frame(width: 120, height: 120, alignment: .center)
                 VStack(alignment: .leading){
-                Text("Instituto")
-                    .foregroundColor(Color(UIColor(named: "dark-grey")!))
-                    .fontWeight(.semibold)
-                    .font(.largeTitle)
-                    
-                Text("Misionero")
-                    .foregroundColor(Color(UIColor(named: "dark-red")!))
-                    .fontWeight(.semibold)
-          	          .font(.largeTitle)
-                }
+                    Text("Instituto")
+                        .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                        .fontWeight(.semibold)
+                        .font(.largeTitle)
+                        
+                    Text("Misionero")
+                        .foregroundColor(Color(UIColor(named: "dark-red")!))
+                        .fontWeight(.semibold)
+                          .font(.largeTitle)
+                    }
             }.frame(width: .minimum(400, 400), height: 130, alignment: .center).padding(.bottom, 10)// --> Icono + titulo
             
             VStack{
@@ -97,6 +97,7 @@ struct Donaciones: View {
                 .foregroundColor(.black)
             }.padding(4)// --> Back button
         )// --> Nav items
+            
     }// --> ZStack potoca
 }// --> View
 }

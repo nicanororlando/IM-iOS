@@ -181,6 +181,7 @@ struct ListInfoView: View {
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        
     }// --> body
 }
 

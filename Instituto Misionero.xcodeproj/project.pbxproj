@@ -28,6 +28,7 @@
 		262EDA0C271F9BEB00023459 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA0B271F9BEB00023459 /* RowView.swift */; };
 		266FAD7527ADD49F005CC046 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266FAD7427ADD49F005CC046 /* CustomButton.swift */; };
 		267A12F427AD6674007326E1 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 267A12F327AD6673007326E1 /* coritario.pdf */; };
+		26B6DA5427E38E8200E788AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA5327E38E8200E788AA /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		262EDA0B271F9BEB00023459 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		266FAD7427ADD49F005CC046 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		267A12F327AD6673007326E1 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = coritario.pdf; path = ../../../../Downloads/coritario.pdf; sourceTree = "<group>"; };
+		26B6DA5327E38E8200E788AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +110,12 @@
 			isa = PBXGroup;
 			children = (
 				262ED9EA271F8EB600023459 /* AppDelegate.swift */,
+				26B6DA5327E38E8200E788AA /* SceneDelegate.swift */,
 				262ED9F0271F8EB900023459 /* Assets.xcassets */,
-				262ED9FF271F8F3500023459 /* Controller */,
-				262ED9FE271F8F2A00023459 /* View */,
 				262ED9F8271F8EB900023459 /* Info.plist */,
 				262ED9F5271F8EB900023459 /* LaunchScreen.storyboard */,
+				262ED9FF271F8F3500023459 /* Controller */,
+				262ED9FE271F8F2A00023459 /* View */,
 				262EDA00271F8F5500023459 /* Util */,
 				262ED9F2271F8EB900023459 /* Preview Content */,
 			);
@@ -135,7 +138,6 @@
 				262EDA04271F963400023459 /* Home */,
 				262EDA03271F962500023459 /* Coritario */,
 				26255602273569AB00D6DA1A /* Acerca de */,
-				262EDA06271F96DD00023459 /* Mas */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,13 +177,6 @@
 				266FAD7427ADD49F005CC046 /* CustomButton.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		262EDA06271F96DD00023459 /* Mas */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +262,7 @@
 				262555FB272B80C300D6DA1A /* TabBar.swift in Sources */,
 				262ED9EF271F8EB600023459 /* Home.swift in Sources */,
 				262572BC27B079DF00F675EF /* ModalView.swift in Sources */,
+				26B6DA5427E38E8200E788AA /* SceneDelegate.swift in Sources */,
 				262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */,
 				2606892227E2401300134506 /* Adapted.swift in Sources */,
 				260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */,
