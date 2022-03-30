@@ -31,9 +31,10 @@ struct roundedCornerButtonStyle: ButtonStyle {
             .offset(x: X, y: Y)
             .overlay(RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(Color.white, lineWidth: linewidth))
-        
             .scaleEffect(configuration.isPressed ? 0.7 : 1.0)
             .animation(.spring())
     }
 }
+
+
 

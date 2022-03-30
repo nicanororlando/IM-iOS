@@ -14,12 +14,7 @@ struct AcercaDeLaApp: View {
     @ObservedObject var adapted = Adapted()
     
     var body: some View {
-        ZStack{
-            Image("fondo13")
-                .resizable()
-                .scaledToFill()
-                .opacity(0.3)
-    
+        ZStack{    
         VStack{
             Spacer()
             
@@ -105,7 +100,6 @@ struct AcercaDeLaApp: View {
                     Spacer()
                 }
                 .frame(width: adapted.adaptedWidth(curWidth: 400), height: adapted.adaptedHeight(curHeight: 60), alignment: .center)
-                .foregroundColor(.black)
             }.padding(4)// --> Back button
           )// --> Nav items
     
