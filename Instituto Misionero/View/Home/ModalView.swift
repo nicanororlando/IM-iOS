@@ -84,12 +84,12 @@ var mainView: some View {
                             .fontWeight(.bold)
                             .font(.system(size: adapted.adaptedHeight(curHeight: 25), weight: .regular))
                             .fixedSize(horizontal: false, vertical: true)
-                            .foregroundColor(Color(UIColor(named: "dark-red")!))
+                            .foregroundColor(Color.red)
                         Text("Misionero")
                             .fontWeight(.bold)
                             .font(.system(size: adapted.adaptedHeight(curHeight: 25), weight: .regular))
                             .fixedSize(horizontal: false, vertical: true)
-                            .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                            .foregroundColor(Color.gray)
                         
                         }// -> VStack IM
                 }// -> HStack icono + IM
@@ -133,7 +133,7 @@ var mainView: some View {
                                 .fontWeight(.bold)
                             }
                         }
-                        .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: adapted.adaptedWidth(curWidth: 10), bgColor: Color(UIColor(named: "dark-red")!).opacity(0.8), bgColor2: Color(UIColor(named: "dark-red")!).opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -(adapted.adaptedHeight(curHeight: 30)), linewidth: 0))
+                        .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: adapted.adaptedWidth(curWidth: 10), bgColor: Color.red.opacity(0.8), bgColor2: Color.red.opacity(0.8), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: -(adapted.adaptedHeight(curHeight: 30)), linewidth: 0))
                         .padding(.bottom, 20)
                     })
                 }
@@ -155,7 +155,7 @@ var mainView: some View {
             RoundedRectangle(cornerRadius: 30, style: .continuous)
                 .frame(width: adapted.screenWidth, height: curHeight)
         }// --> ZStack
-        .foregroundColor(Color(UIColor(named: "dark-red")!).opacity(0.7))
+        .foregroundColor(Color.red.opacity(0.7))
     )// --> Background
     .animation(isDragging ? nil  : .easeInOut(duration: 0.45))
     .onDisappear { self.curHeight = self.minHeight }

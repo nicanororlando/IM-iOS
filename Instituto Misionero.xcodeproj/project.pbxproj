@@ -23,12 +23,19 @@
 		262ED9F1271F8EB900023459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F0271F8EB900023459 /* Assets.xcassets */; };
 		262ED9F4271F8EB900023459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F3271F8EB900023459 /* Preview Assets.xcassets */; };
 		262ED9F7271F8EB900023459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262ED9F5271F8EB900023459 /* LaunchScreen.storyboard */; };
-		262EDA08271F971400023459 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA07271F971400023459 /* PDF.swift */; };
+		262EDA08271F971400023459 /* ViewerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA07271F971400023459 /* ViewerScreen.swift */; };
 		262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA09271F9B5B00023459 /* Cancion.swift */; };
-		262EDA0C271F9BEB00023459 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA0B271F9BEB00023459 /* RowView.swift */; };
 		266FAD7527ADD49F005CC046 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266FAD7427ADD49F005CC046 /* CustomButton.swift */; };
 		267A12F427AD6674007326E1 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 267A12F327AD6673007326E1 /* coritario.pdf */; };
 		26B6DA5427E38E8200E788AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA5327E38E8200E788AA /* SceneDelegate.swift */; };
+		334325A427F6560C00C6603D /* HeaderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334325A327F6560C00C6603D /* HeaderBackground.swift */; };
+		335A9CB527F2921600C8F1C5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CB427F2921500C8F1C5 /* SearchBar.swift */; };
+		335A9CB727F296DC00C8F1C5 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CB627F296DC00C8F1C5 /* ListItem.swift */; };
+		335A9CB927F29B7A00C8F1C5 /* ListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CB827F29B7A00C8F1C5 /* ListContainer.swift */; };
+		335A9CBB27F31CAD00C8F1C5 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CBA27F31CAD00C8F1C5 /* SearchField.swift */; };
+		335A9CBD27F31CDD00C8F1C5 /* SearchOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CBC27F31CDD00C8F1C5 /* SearchOverlay.swift */; };
+		335A9CC127F31D2300C8F1C5 /* SearchCancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CC027F31D2200C8F1C5 /* SearchCancel.swift */; };
+		335A9CC327F3272300C8F1C5 /* ViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CC227F3272300C8F1C5 /* ViewerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,12 +57,19 @@
 		262ED9F3271F8EB900023459 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		262ED9F6271F8EB900023459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262ED9F8271F8EB900023459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		262EDA07271F971400023459 /* PDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
+		262EDA07271F971400023459 /* ViewerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerScreen.swift; sourceTree = "<group>"; };
 		262EDA09271F9B5B00023459 /* Cancion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancion.swift; sourceTree = "<group>"; };
-		262EDA0B271F9BEB00023459 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		266FAD7427ADD49F005CC046 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		267A12F327AD6673007326E1 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = coritario.pdf; path = ../../../../Downloads/coritario.pdf; sourceTree = "<group>"; };
 		26B6DA5327E38E8200E788AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		334325A327F6560C00C6603D /* HeaderBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBackground.swift; sourceTree = "<group>"; };
+		335A9CB427F2921500C8F1C5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		335A9CB627F296DC00C8F1C5 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		335A9CB827F29B7A00C8F1C5 /* ListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContainer.swift; sourceTree = "<group>"; };
+		335A9CBA27F31CAD00C8F1C5 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		335A9CBC27F31CDD00C8F1C5 /* SearchOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOverlay.swift; sourceTree = "<group>"; };
+		335A9CC027F31D2200C8F1C5 /* SearchCancel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCancel.swift; sourceTree = "<group>"; };
+		335A9CC227F3272300C8F1C5 /* ViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +176,16 @@
 		262EDA03271F962500023459 /* Coritario */ = {
 			isa = PBXGroup;
 			children = (
-				262EDA0B271F9BEB00023459 /* RowView.swift */,
 				262556002735691200D6DA1A /* Coritario.swift */,
-				262EDA07271F971400023459 /* PDF.swift */,
+				335A9CB827F29B7A00C8F1C5 /* ListContainer.swift */,
+				335A9CB627F296DC00C8F1C5 /* ListItem.swift */,
+				335A9CB427F2921500C8F1C5 /* SearchBar.swift */,
+				335A9CC027F31D2200C8F1C5 /* SearchCancel.swift */,
+				335A9CBA27F31CAD00C8F1C5 /* SearchField.swift */,
+				335A9CBC27F31CDD00C8F1C5 /* SearchOverlay.swift */,
+				262EDA07271F971400023459 /* ViewerScreen.swift */,
+				335A9CC227F3272300C8F1C5 /* ViewerView.swift */,
+				334325A327F6560C00C6603D /* HeaderBackground.swift */,
 			);
 			path = Coritario;
 			sourceTree = "<group>";
@@ -251,14 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335A9CB727F296DC00C8F1C5 /* ListItem.swift in Sources */,
 				262ED9EB271F8EB600023459 /* AppDelegate.swift in Sources */,
-				262EDA0C271F9BEB00023459 /* RowView.swift in Sources */,
+				335A9CB527F2921600C8F1C5 /* SearchBar.swift in Sources */,
 				260BA9BB274C0B730055448D /* Donaciones.swift in Sources */,
 				262555FF272B8FDE00D6DA1A /* ContentView.swift in Sources */,
 				260D396D27B2E9F100888A2B /* CustomButton2.swift in Sources */,
 				266FAD7527ADD49F005CC046 /* CustomButton.swift in Sources */,
 				260BA9B7273870C50055448D /* Item.swift in Sources */,
-				262EDA08271F971400023459 /* PDF.swift in Sources */,
+				335A9CC127F31D2300C8F1C5 /* SearchCancel.swift in Sources */,
+				262EDA08271F971400023459 /* ViewerScreen.swift in Sources */,
+				335A9CC327F3272300C8F1C5 /* ViewerView.swift in Sources */,
 				262555FB272B80C300D6DA1A /* TabBar.swift in Sources */,
 				262ED9EF271F8EB600023459 /* Home.swift in Sources */,
 				262572BC27B079DF00F675EF /* ModalView.swift in Sources */,
@@ -266,7 +290,11 @@
 				262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */,
 				2606892227E2401300134506 /* Adapted.swift in Sources */,
 				260BA9B9274C0B5E0055448D /* AcercaDeLaApp.swift in Sources */,
+				334325A427F6560C00C6603D /* HeaderBackground.swift in Sources */,
 				262555FD272B83C200D6DA1A /* TabButton.swift in Sources */,
+				335A9CB927F29B7A00C8F1C5 /* ListContainer.swift in Sources */,
+				335A9CBD27F31CDD00C8F1C5 /* SearchOverlay.swift in Sources */,
+				335A9CBB27F31CAD00C8F1C5 /* SearchField.swift in Sources */,
 				262556012735691200D6DA1A /* Coritario.swift in Sources */,
 				260BA9B52738705F0055448D /* ListInfoView.swift in Sources */,
 			);

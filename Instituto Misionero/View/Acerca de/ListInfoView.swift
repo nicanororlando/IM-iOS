@@ -16,7 +16,6 @@ struct ListInfoView: View {
     var navigateToListInfoView: Binding<Bool>
     
     var body: some View {
-        NavigationView{
         ZStack{
 //            Image("grupo3")
 //                .resizable()
@@ -173,7 +172,6 @@ struct ListInfoView: View {
           }.padding(7))
             
         }// --> ZStack
-            
         }// --> NavigationView
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
