@@ -12,28 +12,26 @@ struct ListInfoView: View {
     @ObservedObject var adapted = Adapted()
     @State var navigateToDonaciones = false
     @State var navigateToAcercaDe = false
+    @State private var showModal = false
     var navigateToListInfoView: Binding<Bool>
     
     var body: some View {
         ZStack{
-        Image("grupo3")
-            .resizable()
-            .scaledToFill()
-            .opacity(0.3)
+//            Image("grupo3")
+//                .resizable()
+//                .scaledToFill()
+//                .opacity(0.3)
     	
             VStack(alignment: .leading){
             
             Group(){
-            VStack (alignment: .leading){
-                Text("Redes sociales")
-                    .font(.title)
-                    .fontWeight(.light)
-                    .padding(.top, 10)
-                    .padding(.bottom, -10)
-                Divider()
-                    .frame(width: 300)
-                    .background(Color.black)
-            }.padding(.leading, 20)
+                VStack (alignment: .leading){
+                    Text("Redes sociales")
+                        .font(.system(size: 20))
+                        .fontWeight(.light)
+                        .padding(.top, adapted.adaptedHeight(curHeight: 30))
+                        .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+                }.padding(.leading, 30)
                 
             // Instagram //
             Button(action: {
@@ -50,6 +48,12 @@ struct ListInfoView: View {
             }) {
                 Boton(image: "instagram", title: "Instagram", subTitle: "@instituto.misionero")
             }
+            .frame(width: adapted.adaptedWidth(curWidth: 350))
+            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+            .padding(.top ,7)
+            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
                 
             // Facebook //
             Button(action: {
@@ -66,6 +70,11 @@ struct ListInfoView: View {
             }) {
                 Boton(image: "facebook", title: "Facebook", subTitle: "facebook.com/institutomisionero")
             }
+            .frame(width: adapted.adaptedWidth(curWidth: 350))
+            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
                 
             // Youtube //
             Button(action: {
@@ -81,22 +90,24 @@ struct ListInfoView: View {
                 }
             }) {
                 Boton(image: "youtube", title: "Youtube", subTitle: "youtube.com/institutomisionero")
-            }.padding(.bottom, 15)
+            }
+            .frame(width: adapted.adaptedWidth(curWidth: 350))
+            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
+            .padding(.bottom, 15)
             }// --> Group redes sociales
             
             Group(){
             VStack(alignment: .leading){
                 Text("Sobre nosotros")
-                    .font(.title)
+                    .font(.system(size: 20))
                     .fontWeight(.light)
-                    .padding(.top, 10)
-                    .padding(.bottom, -10)
-                Divider()
-                    .frame(width: 300)
-                    .background(Color.black)
-            }.padding(.leading, 20)
+                    .padding(.top, adapted.adaptedHeight(curHeight: 10))
+                    .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+            }.padding(.leading, 30)
             
-            Group(){
+            VStack(alignment: .center){
                 
             // Acerca de //
             NavigationLink(
@@ -106,20 +117,14 @@ struct ListInfoView: View {
                     Button(action: {
                         self.navigateToAcercaDe = true
                     }) {
-                        HStack{
-                            Image("informacion")
-                  	              .resizable()
-                                .frame(width: 40, height: 40, alignment: .center)
-                                .foregroundColor(Color.gray)
-                                .padding(.trailing,5)
-                            Text("Acerca de esta App")
-                                .foregroundColor(Color.black)
-                                .font(.title)
-                        }
+                        Boton(image: "informacion", title: "Acerca de esta App", subTitle: "", sub: false)
                     }
-                    .padding(5)
+                    .frame(width: adapted.adaptedWidth(curWidth: 350))
+                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+                    .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black))
                     .padding(.top, 7)
-                    .padding(.leading, 15)
+                    .padding(.bottom, -(adapted.adaptedHeight(curHeight: 14)))
             })
             
             // Donaciones //
@@ -130,19 +135,12 @@ struct ListInfoView: View {
                     Button(action: {
                         self.navigateToDonaciones = true
                     }) {
-                        HStack{
-                            Image("pago")
-                                .resizable()
-                                .frame(width: 40, height: 40, alignment: .center)
-                                .foregroundColor(Color.gray)
-                                .padding(.trailing, 5)
-                            Text("Donaciones")
-                                .foregroundColor(Color.black)
-                                .font(.title)
-                        }
-                        .padding(5)
-                        .padding(.leading, 15)
+                        Boton(image: "pago", title: "Donaciones", subTitle: "", sub: false)
                     }
+                    .frame(width: adapted.adaptedWidth(curWidth: 350))
+                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+                    .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
             })
                 
             }// --> Group sobre nosotros
@@ -171,10 +169,10 @@ struct ListInfoView: View {
                   Spacer()
               }
               .frame(width: adapted.adaptedWidth(curWidth: 400), height: 60, alignment: .center)
-              .foregroundColor(.black)
           }.padding(7))
             
         }// --> ZStack
+        }// --> NavigationView
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
@@ -182,30 +180,94 @@ struct ListInfoView: View {
     }// --> body
 }
 
+struct EdgeBorder: Shape {
+
+var width: CGFloat
+var edges: [Edge]
+
+func path(in rect: CGRect) -> Path {
+    var path = Path()
+    for edge in edges {
+        var x: CGFloat {
+            switch edge {
+            case .top, .bottom, .leading: return rect.minX
+            case .trailing: return rect.maxX - width
+            }
+        }
+
+        var y: CGFloat {
+            switch edge {
+            case .top, .leading, .trailing: return rect.minY
+            case .bottom: return rect.maxY - width
+            }
+        }
+
+        var w: CGFloat {
+            switch edge {
+            case .top, .bottom: return rect.width
+            case .leading, .trailing: return self.width
+            }
+        }
+
+        var h: CGFloat {
+            switch edge {
+            case .top, .bottom: return self.width
+            case .leading, .trailing: return rect.height
+            }
+        }
+        path.addPath(Path(CGRect(x: x, y: y, width: w, height: h)))
+        }
+        return path
+    }
+}
+
 struct Boton: View {
     
     let image: String
     let title: String
     let subTitle: String
+    var sub: Bool = true
+    @ObservedObject var adapted = Adapted()
     
     var body: some View {
         HStack{
             Image(image)
                 .resizable()
-                .frame(width: 40, height: 40, alignment: .center)
+                .frame(width: adapted.adaptedHeight(curHeight: 35), height: adapted.adaptedHeight(curHeight: 35), alignment: .center)
                 .padding(.trailing, 5)
             VStack(alignment: .leading){
                 Text(title)
-                    .font(.title)
-                Text(subTitle)
-                    .font(.subheadline)
+                    .font(.system(size: adapted.adaptedHeight(curHeight: 20)))
+                
+                if(sub){
+                    Text(subTitle)
+                        .font(.subheadline)
+                }
             }
             Spacer()
         }
-        .frame(width: 400, height: 60, alignment: .center)
-        .foregroundColor(.black)
-        .padding(5)
-        .padding(.leading, 15)
+    }
+}
+
+struct buttonList: ButtonStyle {
+    var font: Font = .title
+    var padding: CGFloat = 0
+    var bgColor: Color = Color.white
+    var fgColor: Color = Color.black
+    var cornerRadius: CGFloat = 10
+    var edges: [Edge] = [.top]
+    var linewidth: CGFloat = 0.3
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(font)
+            .padding(padding)
+            .background(bgColor)
+            .foregroundColor(fgColor)
+            .cornerRadius(cornerRadius)
+            .overlay(EdgeBorder(width: 0.5, edges: edges).foregroundColor(fgColor))
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .animation(.easeInOut)
     }
 }
 
