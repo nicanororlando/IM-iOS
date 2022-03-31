@@ -22,143 +22,142 @@ struct ListInfoView: View {
 //                .scaledToFill()
 //                .opacity(0.3)
     	
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
             
-            Group(){
-                VStack (alignment: .leading){
-                    Text("Redes sociales")
-                        .font(.system(size: 20))
-                        .fontWeight(.light)
-                        .padding(.top, adapted.adaptedHeight(curHeight: 30))
-                        .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-                }.padding(.leading, 30)
+                Group(){
+                    VStack (alignment: .leading) {
+                        Text("Redes sociales")
+                            .font(.system(size: 20))
+                            .fontWeight(.light)
+                            .padding(.top, adapted.adaptedHeight(curHeight: 30))
+                            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+                    }.padding(.leading, 30)
                 
-            // Instagram //
-            Button(action: {
-                let url = URL(string: "http://instagram.com/_u/instituto.misionero")!
-                let application = UIApplication.shared
-                
-                /// Check if the ig App is installed
-                if application.canOpenURL(url) {
-                    application.open(url)
-                } else {
-                    /// If ig App is not installed, open Safari with ig Link
-                    application.open(URL(string: "http://instagram.com/_u/instituto.misionero")!)
-                }
-            }) {
-                Boton(image: "instagram", title: "Instagram", subTitle: "@instituto.misionero")
-            }
-            .frame(width: adapted.adaptedWidth(curWidth: 350))
-            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-            .padding(.top ,7)
-            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
-                
-            // Facebook //
-            Button(action: {
-                let url = URL(string: "facebook.com/institutomisionero")!
-                let application = UIApplication.shared
-                
-                /// Check if the facebook App is installed
-                if application.canOpenURL(url) {
-                    application.open(url)
-                } else {
-                    /// If Facebook App is not installed, open Safari with Facebook Link
-                    application.open(URL(string: "facebook.com/institutomisionero")!)
-                }
-            }) {
-                Boton(image: "facebook", title: "Facebook", subTitle: "facebook.com/institutomisionero")
-            }
-            .frame(width: adapted.adaptedWidth(curWidth: 350))
-            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
-                
-            // Youtube //
-            Button(action: {
-                let url = URL(string: "youtube.com/institutomisionero")!
-                let application = UIApplication.shared
-                
-                /// Check if the yt App is installed
-                if application.canOpenURL(url) {
-                    application.open(url)
-                } else {
-                    /// If yt App is not installed, open Safari with yt Link
-                    application.open(URL(string: "https://www.youtube.com/user/InstitutoMisionerUAP")!)
-                }
-            }) {
-                Boton(image: "youtube", title: "Youtube", subTitle: "youtube.com/institutomisionero")
-            }
-            .frame(width: adapted.adaptedWidth(curWidth: 350))
-            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
-            .padding(.bottom, 15)
-            }// --> Group redes sociales
-            
-            Group(){
-            VStack(alignment: .leading){
-                Text("Sobre nosotros")
-                    .font(.system(size: 20))
-                    .fontWeight(.light)
-                    .padding(.top, adapted.adaptedHeight(curHeight: 10))
+                    // Instagram //
+                    Button(action: {
+                        let url = URL(string: "http://instagram.com/_u/instituto.misionero")!
+                        let application = UIApplication.shared
+                    
+                        /// Check if the ig App is installed
+                        if application.canOpenURL(url) {
+                            application.open(url)
+                        } else {
+                            /// If ig App is not installed, open Safari with ig Link
+                            application.open(URL(string: "http://instagram.com/_u/instituto.misionero")!)
+                        }
+                    }) {
+                        Boton(image: "instagram", title: "Instagram", subTitle: "@instituto.misionero")
+                    }
+                    .frame(width: adapted.adaptedWidth(curWidth: 350))
                     .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-            }.padding(.leading, 30)
-            
-            VStack(alignment: .center){
-                
-            // Acerca de //
-            NavigationLink(
-                destination: AcercaDeLaApp(navigateToAcercaDe: $navigateToAcercaDe),
-                isActive: $navigateToAcercaDe,
-                label: {
+                    .padding(.top ,7)
+                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+                    .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
+                    
+                    // Facebook //
                     Button(action: {
-                        self.navigateToAcercaDe = true
+                        let url = URL(string: "facebook.com/institutomisionero")!
+                        let application = UIApplication.shared
+                        
+                        /// Check if the facebook App is installed
+                        if application.canOpenURL(url) {
+                            application.open(url)
+                        } else {
+                            /// If Facebook App is not installed, open Safari with Facebook Link
+                            application.open(URL(string: "facebook.com/institutomisionero")!)
+                        }
                     }) {
-                        Boton(image: "informacion", title: "Acerca de esta App", subTitle: "", sub: false)
+                        Boton(image: "facebook", title: "Facebook", subTitle: "facebook.com/institutomisionero")
+                    }
+                    .frame(width: adapted.adaptedWidth(curWidth: 350))
+                    .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+                    .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
+                    
+                    // Youtube //
+                    Button(action: {
+                        let url = URL(string: "youtube.com/institutomisionero")!
+                        let application = UIApplication.shared
+                        
+                        /// Check if the yt App is installed
+                        if application.canOpenURL(url) {
+                            application.open(url)
+                        } else {
+                            /// If yt App is not installed, open Safari with yt Link
+                            application.open(URL(string: "https://www.youtube.com/user/InstitutoMisionerUAP")!)
+                        }
+                    }) {
+                        Boton(image: "youtube", title: "Youtube", subTitle: "youtube.com/institutomisionero")
                     }
                     .frame(width: adapted.adaptedWidth(curWidth: 350))
                     .padding(.leading, adapted.adaptedWidth(curWidth: 30))
                     .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-                    .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black))
-                    .padding(.top, 7)
-                    .padding(.bottom, -(adapted.adaptedHeight(curHeight: 14)))
-            })
+                    .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
+                    .padding(.bottom, 15)
+                }// --> Group redes sociales
             
-            // Donaciones //
-            NavigationLink(
-                destination: Donaciones(navigateToDonaciones: $navigateToDonaciones),
-                isActive: $navigateToDonaciones,
-                label: {
-                    Button(action: {
-                        self.navigateToDonaciones = true
-                    }) {
-                        Boton(image: "pago", title: "Donaciones", subTitle: "", sub: false)
-                    }
-                    .frame(width: adapted.adaptedWidth(curWidth: 350))
-                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-                    .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
-            })
+                Group() {
+                    VStack(alignment: .leading) {
+                            Text("Sobre nosotros")
+                            .font(.system(size: 20))
+                            .fontWeight(.light)
+                            .padding(.top, adapted.adaptedHeight(curHeight: 10))
+                            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
+                    }.padding(.leading, 30)
+            
+                    VStack(alignment: .center) {
                 
-            }// --> Group sobre nosotros
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+                        // Acerca de //
+                        NavigationLink(
+                            destination: AcercaDeLaApp(navigateToAcercaDe: $navigateToAcercaDe),
+                            isActive: $navigateToAcercaDe,
+                            label: {
+                                Button(action: {
+                                    self.navigateToAcercaDe = true
+                                }) {
+                                    Boton(image: "informacion", title: "Acerca de esta App", subTitle: "", sub: false)
+                                }
+                                .frame(width: adapted.adaptedWidth(curWidth: 350))
+                                .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+                                .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+                                .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black))
+                                .padding(.top, 7)
+                                .padding(.bottom, -(adapted.adaptedHeight(curHeight: 14)))
+                            }
+                        )
                 
-            }// --> Group potoca
-            Spacer()
-               
-          }// --> VStack potoca
-          .navigationBarBackButtonHidden(true)
-          .navigationBarTitle("", displayMode: .inline)
-          .navigationBarHidden(false)
-          .navigationBarItems(leading:
-              Button(action: {
-              self.navigateToListInfoView.wrappedValue = false
-          }) {
+                        // Donaciones //
+                        NavigationLink(
+                            destination: Donaciones(navigateToDonaciones: $navigateToDonaciones),
+                            isActive: $navigateToDonaciones,
+                            label: {
+                                Button(action: {
+                                    self.navigateToDonaciones = true
+                                }) {
+                                    Boton(image: "pago", title: "Donaciones", subTitle: "", sub: false)
+                                }
+                                .frame(width: adapted.adaptedWidth(curWidth: 350))
+                                .padding(.leading, adapted.adaptedWidth(curWidth: 30))
+                                .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
+                                .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
+                            }
+                        )
+                    }// --> Group sobre nosotros
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                
+                }// --> Group potoca
+                Spacer()
+           }// --> VStack potoca
+           .navigationBarBackButtonHidden(true)
+           .navigationBarTitle("", displayMode: .inline)
+           .navigationBarHidden(false)
+           .navigationBarItems(leading: Button(action: {
+               self.navigateToListInfoView.wrappedValue = false
+           }) {
               HStack{
                   Image("icons8-atras")
                       .resizable()
@@ -169,10 +168,9 @@ struct ListInfoView: View {
                   Spacer()
               }
               .frame(width: adapted.adaptedWidth(curWidth: 400), height: 60, alignment: .center)
-          }.padding(7))
+           }.padding(7))
             
         }// --> ZStack
-        }// --> NavigationView
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

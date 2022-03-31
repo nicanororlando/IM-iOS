@@ -51,7 +51,7 @@ struct Home: View {
                 
                  // CORITARIO //
                  NavigationLink(
-                    destination: Coritario(navigateToCoritario: $navigateToCoritario).environmentObject(CancionesModelData()),
+                    destination: Coritario(),
                      isActive: $navigateToCoritario)
                      {
                         Text("Coritario")
