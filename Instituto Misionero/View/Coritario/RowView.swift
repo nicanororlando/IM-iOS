@@ -18,12 +18,10 @@ struct RowView: View {
             
             ///Acedemos al ID
             Text("\(cancion.id)")
-                .font(.title)
                 .padding()
             
             ///Accedemos al texto (Titulo y descripcion) alineacion izquierda
             Text(cancion.name)
-                .font(.title)
             
             ///Para empujar el contenido a la izquierda
             Spacer()

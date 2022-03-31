@@ -29,12 +29,12 @@ struct Donaciones: View {
                     .frame(width: 120, height: 120, alignment: .center)
                 VStack(alignment: .leading){
                     Text("Instituto")
-                        .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                        .foregroundColor(Color.gray)
                         .fontWeight(.semibold)
                         .font(.largeTitle)
                         
                     Text("Misionero")
-                        .foregroundColor(Color(UIColor(named: "dark-red")!))
+                        .foregroundColor(Color.red)
                         .fontWeight(.semibold)
                           .font(.largeTitle)
                     }

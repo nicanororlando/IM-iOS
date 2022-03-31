@@ -14,92 +14,78 @@ struct Home: View {
     @State private var showModal = false
     @State var navigateToCoritario = false
     @State var navigateToListInfoView = false
-    
-    @ObservedObject var adapted = Adapted()
-    
+        
     var body: some View {
         NavigationView {
             ZStack{
-            Image("fondo13")
-                .resizable()
-                .scaledToFill()
-                .opacity(0.9)
+                
+                Image("fondo13")
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(0.9)
             
-            VStack{
-                Spacer()
-                
-                // IM //
-                Button(action: {
-                    self.showModal = true
-                }) {
                 VStack{
-                    Image("icono_im")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .padding(.bottom, -10)
-                        .padding(.top, 7)
-                    Text("Instituto")
-                        .foregroundColor(Color(UIColor(named: "dark-grey")!))
-                        .fontWeight(.semibold)
-                        .offset(x: 0, y: 0)
-                    Text("Misionero")
-                        .foregroundColor(Color(UIColor(named: "semi-dark-red")!))
-                        .fontWeight(.semibold)
-                        .offset(x: 0, y: 0)
+                    Spacer()
+                    
+                    // IM //
+                    Button(action: {
+                        self.showModal = true
+                    }) {
+                    VStack{
+                        Image("icono_im")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                            .padding(.bottom, -10)
+                            .padding(.top, 7)
+                        Text("Instituto")
+                            .foregroundColor(Color.gray)
+                            .fontWeight(.semibold)
+                            .offset(x: 0, y: 0)
+                        Text("Misionero")
+                            .foregroundColor(Color(UIColor(named: "semi-dark-red")!))
+                            .fontWeight(.semibold)
+                            .offset(x: 0, y: 0)
+                        }
                     }
-                }
-                .padding(.bottom,25)
-                .buttonStyle(filledRoundedCornerButtonStyle(font: .largeTitle, padding: 10, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.7), fgColor: .white, cornerRadius: 20, opacity: 1.0, X: 0, Y: 0))
-                
-                Group(){
-                // CORITARIO //
-                NavigationLink(
-                    destination: Coritario(navigateToCoritario: $navigateToCoritario).environmentObject(CancionesModelData()),
-                    isActive: $navigateToCoritario,
-                    label: {
-                        Button(action: {
-                            self.navigateToCoritario = true
-                        }) {
-                        HStack{
-                            Image(systemName: "music.note.list")
-                            Text("Coritario")
-                                .fontWeight(.semibold)
-                            }
-                        }
-                        .padding(.bottom,10)
-                        .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 20, bgColor: Color.white.opacity(0.7), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
-                    })	
-                
-                // ACERCA DE NOSOTROS //
-                NavigationLink(
-                    destination: ListInfoView(navigateToListInfoView: $navigateToListInfoView),
-                    isActive: $navigateToListInfoView,
-                    label: {
-                        Button(action: {
-                            self.navigateToListInfoView = true
-                        }) {
-                        HStack{
-                            Image(systemName: "info.circle")
-                            Text("Acerca de nosotros")
-                                .fontWeight(.semibold)
-                            }
-                        }
-                        .buttonStyle(filledRoundedCornerButtonStyle(font: .title, padding: 15, bgColor: Color.white.opacity(0.6), bgColor2: Color.gray.opacity(0.5), fgColor: .white, cornerRadius: 10, opacity: 1, X: 0, Y: 0))
-                    })
-                }// --> Group
-                .navigationBarTitle("instituto misionero", displayMode: .inline)
-                .navigationBarHidden(true)
-                
-                Spacer()
-                    .frame(height: adapted.adaptedHeight(curHeight: 30))
-                
+                    .padding(.bottom,25)
+                    .buttonStyle(filledRoundedCornerButtonStyle(
+                        font: .largeTitle,
+                        padding: 10,
+                        bgColor: Color.white.opacity(0.7),
+                        bgColor2: Color.gray.opacity(0.7),
+                        fgColor: .white,
+                        cornerRadius: 20,
+                        opacity: 1.0, X: 0, Y: 0))
+                    
+                    
+                    // CORITARIO //
+                    NavigationLink(
+                        destination: Coritario(),
+                        label: {
+                            HStack{
+                                Image(systemName: "music.note.list")
+                                Text("Coritario")
+                                    .fontWeight(.semibold)
+                                }
+                        })
+                        .buttonStyle(filledRoundedCornerButtonStyle(
+                            font: .title,
+                            padding: 20,
+                            bgColor: Color.white.opacity(0.7),
+                            bgColor2: Color.gray.opacity(0.5),
+                            fgColor: .white,
+                            cornerRadius: 10,
+                            opacity: 1, X: 0, Y: 0
+                        ))
+                    
+                    
                 }// --> VStack
+                    .padding(40)
     
-                ModalView(isShowing: $showModal, curHeight: adapted.adaptedHeight(curHeight: 450))
+                ModalView(isShowing: $showModal, curHeight: 450)
             
             }// --> ZStack
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .statusBar(hidden: true)
+                .navigationBarHidden(true)
         }// --> Nav view
     }// --> Body
 }

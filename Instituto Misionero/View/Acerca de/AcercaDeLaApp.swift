@@ -30,11 +30,11 @@ struct AcercaDeLaApp: View {
                 .padding(.bottom, -10)
             HStack{
                 Text("Instituto")
-                    .foregroundColor(Color(UIColor(named: "dark-grey")!))
+                    .foregroundColor(Color.gray)
                     .fontWeight(.semibold)
                     .font(.system(size: adapted.adaptedWidth(curWidth: 27)))
                 Text("Misionero")
-                    .foregroundColor(Color(UIColor(named: "dark-red")!))
+                    .foregroundColor(Color.red)
                     .fontWeight(.semibold)
                     .font(.system(size: adapted.adaptedWidth(curWidth: 27)))
             }

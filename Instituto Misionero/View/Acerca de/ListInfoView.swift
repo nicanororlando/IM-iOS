@@ -15,7 +15,6 @@ struct ListInfoView: View {
     var navigateToListInfoView: Binding<Bool>
     
     var body: some View {
-        NavigationView{
         ZStack{
         Image("grupo3")
             .resizable()
@@ -111,8 +110,7 @@ struct ListInfoView: View {
                             Image("informacion")
                   	              .resizable()
                                 .frame(width: 40, height: 40, alignment: .center)
-                                .foregroundColor(Color(UIColor(named:
-                                    "dark-red")!))
+                                .foregroundColor(Color.gray)
                                 .padding(.trailing,5)
                             Text("Acerca de esta App")
                                 .foregroundColor(Color.black)
@@ -136,7 +134,7 @@ struct ListInfoView: View {
                             Image("pago")
                                 .resizable()
                                 .frame(width: 40, height: 40, alignment: .center)
-                                .foregroundColor(Color(UIColor(named: "dark-red")!))
+                                .foregroundColor(Color.gray)
                                 .padding(.trailing, 5)
                             Text("Donaciones")
                                 .foregroundColor(Color.black)
@@ -177,7 +175,6 @@ struct ListInfoView: View {
           }.padding(7))
             
         }// --> ZStack
-        }// --> NavigationView
         .navigationBarTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
