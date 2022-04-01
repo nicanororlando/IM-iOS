@@ -26,8 +26,14 @@
 		262EDA08271F971400023459 /* ViewerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA07271F971400023459 /* ViewerScreen.swift */; };
 		262EDA0A271F9B5B00023459 /* Cancion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262EDA09271F9B5B00023459 /* Cancion.swift */; };
 		266FAD7527ADD49F005CC046 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266FAD7427ADD49F005CC046 /* CustomButton.swift */; };
-		267A12F427AD6674007326E1 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 267A12F327AD6673007326E1 /* coritario.pdf */; };
 		26B6DA5427E38E8200E788AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B6DA5327E38E8200E788AA /* SceneDelegate.swift */; };
+		33385C1927F676D70000BF65 /* cancion62.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C1227F676D70000BF65 /* cancion62.pdf */; };
+		33385C1A27F676D70000BF65 /* cancion18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C1327F676D70000BF65 /* cancion18.pdf */; };
+		33385C1C27F676D70000BF65 /* cancion149.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C1527F676D70000BF65 /* cancion149.pdf */; };
+		33385C1D27F676D70000BF65 /* cancion29.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C1627F676D70000BF65 /* cancion29.pdf */; };
+		33385C1E27F676D70000BF65 /* cancion70.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C1727F676D70000BF65 /* cancion70.pdf */; };
+		33385C1F27F676D70000BF65 /* cancion41.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C1827F676D70000BF65 /* cancion41.pdf */; };
+		33385C2127F678F60000BF65 /* coritario.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33385C2027F678F60000BF65 /* coritario.pdf */; };
 		334325A427F6560C00C6603D /* HeaderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334325A327F6560C00C6603D /* HeaderBackground.swift */; };
 		335A9CB527F2921600C8F1C5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CB427F2921500C8F1C5 /* SearchBar.swift */; };
 		335A9CB727F296DC00C8F1C5 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335A9CB627F296DC00C8F1C5 /* ListItem.swift */; };
@@ -60,8 +66,14 @@
 		262EDA07271F971400023459 /* ViewerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerScreen.swift; sourceTree = "<group>"; };
 		262EDA09271F9B5B00023459 /* Cancion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancion.swift; sourceTree = "<group>"; };
 		266FAD7427ADD49F005CC046 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		267A12F327AD6673007326E1 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = coritario.pdf; path = ../../../../Downloads/coritario.pdf; sourceTree = "<group>"; };
 		26B6DA5327E38E8200E788AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		33385C1227F676D70000BF65 /* cancion62.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancion62.pdf; sourceTree = "<group>"; };
+		33385C1327F676D70000BF65 /* cancion18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancion18.pdf; sourceTree = "<group>"; };
+		33385C1527F676D70000BF65 /* cancion149.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancion149.pdf; sourceTree = "<group>"; };
+		33385C1627F676D70000BF65 /* cancion29.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancion29.pdf; sourceTree = "<group>"; };
+		33385C1727F676D70000BF65 /* cancion70.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancion70.pdf; sourceTree = "<group>"; };
+		33385C1827F676D70000BF65 /* cancion41.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = cancion41.pdf; sourceTree = "<group>"; };
+		33385C2027F678F60000BF65 /* coritario.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = coritario.pdf; sourceTree = "<group>"; };
 		334325A327F6560C00C6603D /* HeaderBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBackground.swift; sourceTree = "<group>"; };
 		335A9CB427F2921500C8F1C5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		335A9CB627F296DC00C8F1C5 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
@@ -168,7 +180,13 @@
 		262EDA00271F8F5500023459 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				267A12F327AD6673007326E1 /* coritario.pdf */,
+				33385C1327F676D70000BF65 /* cancion18.pdf */,
+				33385C1627F676D70000BF65 /* cancion29.pdf */,
+				33385C1827F676D70000BF65 /* cancion41.pdf */,
+				33385C1227F676D70000BF65 /* cancion62.pdf */,
+				33385C1727F676D70000BF65 /* cancion70.pdf */,
+				33385C1527F676D70000BF65 /* cancion149.pdf */,
+				33385C2027F678F60000BF65 /* coritario.pdf */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -258,10 +276,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33385C1F27F676D70000BF65 /* cancion41.pdf in Resources */,
 				262ED9F7271F8EB900023459 /* LaunchScreen.storyboard in Resources */,
+				33385C1E27F676D70000BF65 /* cancion70.pdf in Resources */,
+				33385C2127F678F60000BF65 /* coritario.pdf in Resources */,
+				33385C1A27F676D70000BF65 /* cancion18.pdf in Resources */,
 				262ED9F4271F8EB900023459 /* Preview Assets.xcassets in Resources */,
-				267A12F427AD6674007326E1 /* coritario.pdf in Resources */,
+				33385C1927F676D70000BF65 /* cancion62.pdf in Resources */,
 				262ED9F1271F8EB900023459 /* Assets.xcassets in Resources */,
+				33385C1D27F676D70000BF65 /* cancion29.pdf in Resources */,
+				33385C1C27F676D70000BF65 /* cancion149.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

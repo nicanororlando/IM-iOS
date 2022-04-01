@@ -23,36 +23,18 @@ struct PDFKitRepresentedView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<PDFKitRepresentedView>) -> PDFKitRepresentedView.UIViewType {
         
         let pdfView = PDFView()
-        
-        pdfView.document = PDFDocument(url: Bundle.main.bundleURL.appendingPathComponent("coritario.pdf"))
-        pdfView.displayMode = .singlePage
         pdfView.autoScales = true
         
-        let i = cancion.id - 1
-        var page = pdfView.document?.page(at: i)
+        var page = pdfView.document?.page(at: 0)
         
-        switch (i) {
-        case 0..<18:
-            page = pdfView.document?.page(at: i)
-        case 18..<29:
-            page = pdfView.document?.page(at: i+1)
-        case 29..<41:
-            page = pdfView.document?.page(at: i+2)
-        case 41..<62:
-            page = pdfView.document?.page(at: i+3)
-        case 62..<69:
-            page = pdfView.document?.page(at: i+4)
-        case 69..<149:
-            page = pdfView.document?.page(at: i+5)
+        switch (cancion.id) {
+        case 18, 29, 41, 62, 70, 149:
+            pdfView.document = PDFDocument(url: Bundle.main.bundleURL.appendingPathComponent("cancion\(cancion.id).pdf"))
+            page = pdfView.document?.page(at: 0)
         default:
-            page = pdfView.document?.page(at: i+6)
-        }
-        
-        switch (i) {
-        case 17, 28, 40, 61, 68, 148:
-            pdfView.displaysPageBreaks = false
-        default:
-            pdfView.displaysPageBreaks = true
+            pdfView.document = PDFDocument(url: Bundle.main.bundleURL.appendingPathComponent("coritario.pdf"))
+            page = pdfView.document?.page(at: cancion.id-1)
+            pdfView.displayMode = .singlePage
         }
 
         pdfView.go(to: (page!))

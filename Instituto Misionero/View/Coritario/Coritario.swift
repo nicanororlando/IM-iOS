@@ -18,7 +18,6 @@ struct Coritario: View {
             VStack {
                 HeaderBackground()
                 
-                
                 SearchBar(text: $searchText)
                 
                 ListContainer(searchText: $searchText)
@@ -27,7 +26,7 @@ struct Coritario: View {
             .background(Color(red: 0.7, green: 0, blue: 0))
             .navigationBarTitle("Coritario", displayMode: .inline)
             .navigationBarItems(trailing:
-                Button("Hours") {
+                Button("Mas") {
                     print("Hours tapped!")
                 }
                 .foregroundColor(.white)
