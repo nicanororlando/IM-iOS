@@ -16,168 +16,122 @@ struct ListInfoView: View {
     var navigateToListInfoView: Binding<Bool>
     
     var body: some View {
-        NavigationView{
         ZStack{
-//            Image("grupo3")
-//                .resizable()
-//                .scaledToFill()
-//                .opacity(0.3)
-    	
             VStack(alignment: .leading){
-            
-            Group(){
-                VStack (alignment: .leading){
+                VStack{
                     Text("Redes sociales")
                         .font(.system(size: 20))
                         .fontWeight(.light)
                         .padding(.top, adapted.adaptedHeight(curHeight: 30))
                         .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-                }.padding(.leading, 30)
-                
-            // Instagram //
-            Button(action: {
-                let url = URL(string: "http://instagram.com/_u/instituto.misionero")!
-                let application = UIApplication.shared
-                
-                /// Check if the ig App is installed
-                if application.canOpenURL(url) {
-                    application.open(url)
-                } else {
-                    /// If ig App is not installed, open Safari with ig Link
-                    application.open(URL(string: "http://instagram.com/_u/instituto.misionero")!)
                 }
-            }) {
-                Boton(image: "instagram", title: "Instagram", subTitle: "@instituto.misionero")
-            }
-            .frame(width: adapted.adaptedWidth(curWidth: 350))
-            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-            .padding(.top ,7)
-            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
                 
-            // Facebook //
-            Button(action: {
-                let url = URL(string: "facebook.com/institutomisionero")!
-                let application = UIApplication.shared
-                
-                /// Check if the facebook App is installed
-                if application.canOpenURL(url) {
-                    application.open(url)
-                } else {
-                    /// If Facebook App is not installed, open Safari with Facebook Link
-                    application.open(URL(string: "facebook.com/institutomisionero")!)
+                // Instagram //
+                Button(action: {
+                    let url = URL(string: "http://instagram.com/_u/instituto.misionero")!
+                    let application = UIApplication.shared
+                    
+                    /// Check if the ig App is installed
+                    if application.canOpenURL(url) {
+                        application.open(url)
+                    } else {
+                        /// If ig App is not installed, open Safari with ig Link
+                        application.open(URL(string: "http://instagram.com/_u/instituto.misionero")!)
+                    }
+                }) {
+                    Boton(image: "instagram", title: "Instagram", subTitle: "@instituto.misionero")
+                    .frame(width: adapted.adaptedWidth(curWidth: 350), height: adapted.adaptedHeight(curHeight: 45))
                 }
-            }) {
-                Boton(image: "facebook", title: "Facebook", subTitle: "facebook.com/institutomisionero")
-            }
-            .frame(width: adapted.adaptedWidth(curWidth: 350))
-            .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black))
-                
-            // Youtube //
-            Button(action: {
-                let url = URL(string: "youtube.com/institutomisionero")!
-                let application = UIApplication.shared
-                
-                /// Check if the yt App is installed
-                if application.canOpenURL(url) {
-                    application.open(url)
-                } else {
-                    /// If yt App is not installed, open Safari with yt Link
-                    application.open(URL(string: "https://www.youtube.com/user/InstitutoMisionerUAP")!)
+                .buttonStyle(buttonList())
+                .padding(.top, adapted.adaptedHeight(curHeight: 7))
+                .padding(.bottom, -(adapted.adaptedHeight(curHeight: 12)))
+
+                    
+                // Facebook //
+                Button(action: {
+                    let url = URL(string: "facebook.com/institutomisionero")!
+                    let application = UIApplication.shared
+                    
+                    /// Check if the facebook App is installed
+                    if application.canOpenURL(url) {
+                        application.open(url)
+                    } else {
+                        /// If Facebook App is not installed, open Safari with Facebook Link
+                        application.open(URL(string: "facebook.com/institutomisionero")!)
+                    }
+                }) {
+                    Boton(image: "facebook", title: "Facebook", subTitle: "facebook.com/institutomisionero")
+                        .frame(width: adapted.adaptedWidth(curWidth: 350), height: adapted.adaptedHeight(curHeight: 45))
                 }
-            }) {
-                Boton(image: "youtube", title: "Youtube", subTitle: "youtube.com/institutomisionero")
-            }
-            .frame(width: adapted.adaptedWidth(curWidth: 350))
-            .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-            .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-            .buttonStyle(buttonList(padding: 5, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
-            .padding(.bottom, 15)
-            }// --> Group redes sociales
-            
-            Group(){
-            VStack(alignment: .leading){
+                .padding(.bottom, -(adapted.adaptedHeight(curHeight: 12)))
+                .buttonStyle(buttonList())
+                    
+                // Youtube //
+                Button(action: {
+                    let url = URL(string: "youtube.com/institutomisionero")!
+                    let application = UIApplication.shared
+                    
+                    /// Check if the yt App is installed
+                    if application.canOpenURL(url) {
+                        application.open(url)
+                    } else {
+                        /// If yt App is not installed, open Safari with yt Link
+                        application.open(URL(string: "https://www.youtube.com/user/InstitutoMisionerUAP")!)
+                    }
+                }) {
+                    Boton(image: "youtube", title: "Youtube", subTitle: "youtube.com/institutomisionero")
+                        .frame(width: adapted.adaptedWidth(curWidth: 350), height: adapted.adaptedHeight(curHeight: 45))
+                }
+                .buttonStyle(buttonList())
+                .padding(.bottom, adapted.adaptedHeight(curHeight: 15))
+                
+
                 Text("Sobre nosotros")
                     .font(.system(size: 20))
                     .fontWeight(.light)
                     .padding(.top, adapted.adaptedHeight(curHeight: 10))
                     .padding(.bottom, -(adapted.adaptedHeight(curHeight: 10)))
-            }.padding(.leading, 30)
-            
-            VStack(alignment: .center){
+                    
+                // Acerca de //
+                NavigationLink(
+                    destination: AcercaDeLaApp(navigateToAcercaDe: $navigateToAcercaDe),
+                    isActive: $navigateToAcercaDe,
+                    label: {
+                        Button(action: {
+                            self.navigateToAcercaDe = true
+                        }) {
+                            Boton(image: "informacion", title: "Acerca de esta App", subTitle: "", sub: false)
+                                .frame(width: adapted.adaptedWidth(curWidth: 350), height: adapted.adaptedHeight(curHeight: 45))
+                        }
+                        .buttonStyle(buttonList())
+                        .padding(.top, adapted.adaptedHeight(curHeight: 7))
+                        .padding(.bottom, -(adapted.adaptedHeight(curHeight: 14)))
+                })
                 
-            // Acerca de //
-            NavigationLink(
-                destination: AcercaDeLaApp(navigateToAcercaDe: $navigateToAcercaDe),
-                isActive: $navigateToAcercaDe,
-                label: {
-                    Button(action: {
-                        self.navigateToAcercaDe = true
-                    }) {
-                        Boton(image: "informacion", title: "Acerca de esta App", subTitle: "", sub: false)
-                    }
-                    .frame(width: adapted.adaptedWidth(curWidth: 350))
-                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-                    .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black))
-                    .padding(.top, 7)
-                    .padding(.bottom, -(adapted.adaptedHeight(curHeight: 14)))
-            })
-            
-            // Donaciones //
-            NavigationLink(
-                destination: Donaciones(navigateToDonaciones: $navigateToDonaciones),
-                isActive: $navigateToDonaciones,
-                label: {
-                    Button(action: {
-                        self.navigateToDonaciones = true
-                    }) {
-                        Boton(image: "pago", title: "Donaciones", subTitle: "", sub: false)
-                    }
-                    .frame(width: adapted.adaptedWidth(curWidth: 350))
-                    .padding(.leading, adapted.adaptedWidth(curWidth: 30))
-                    .padding(.trailing, adapted.adaptedWidth(curWidth: 30))
-                    .buttonStyle(buttonList(padding: 10, bgColor: .white, fgColor: .black, edges: [.top, .bottom]))
-            })
+                // Donaciones //
+                NavigationLink(
+                    destination: Donaciones(navigateToDonaciones: $navigateToDonaciones),
+                    isActive: $navigateToDonaciones,
+                    label: {
+                        Button(action: {
+                            self.navigateToDonaciones = true
+                        }) {
+                            Boton(image: "pago", title: "Donaciones", subTitle: "", sub: false)
+                            .frame(width: adapted.adaptedWidth(curWidth: 350), height: adapted.adaptedHeight(curHeight: 45))
+                        }
+                        .buttonStyle(buttonList())
+                })
+                   
+                Spacer()
                 
-            }// --> Group sobre nosotros
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
-                
-            }// --> Group potoca
-            Spacer()
-               
-          }// --> VStack potoca
-          .navigationBarBackButtonHidden(true)
-          .navigationBarTitle("", displayMode: .inline)
-          .navigationBarHidden(false)
-          .navigationBarItems(leading:
-              Button(action: {
-              self.navigateToListInfoView.wrappedValue = false
-          }) {
-              HStack{
-                  Image("icons8-atras")
-                      .resizable()
-                      .frame(width: adapted.adaptedWidth(curWidth: 31), height: adapted.adaptedWidth(curWidth: 31), alignment: .center)
-                  Text("im")
-                      .font(.system(size: adapted.adaptedWidth(curWidth: 18)))
-                      .offset(x: -(adapted.adaptedWidth(curWidth: 15)))
-                  Spacer()
-              }
-              .frame(width: adapted.adaptedWidth(curWidth: 400), height: 60, alignment: .center)
-          }.padding(7))
+            }// --> VStack
+            .padding(.leading, 40)
+            .padding(.trailing, 40)
+            .navigationBarBackButtonHidden(false)
+            .navigationBarTitle("Mas sobre nosotros", displayMode: .inline)
+            .navigationBarHidden(false)
             
         }// --> ZStack
-            
-        }// --> NavigationView
-        .navigationBarTitle("")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
         
     }// --> body
 }
@@ -237,6 +191,7 @@ struct Boton: View {
                 .resizable()
                 .frame(width: adapted.adaptedHeight(curHeight: 35), height: adapted.adaptedHeight(curHeight: 35), alignment: .center)
                 .padding(.trailing, 5)
+                .foregroundColor(Color(red: 88, green: 00, blue: 00))
             VStack(alignment: .leading){
                 Text(title)
                     .font(.system(size: adapted.adaptedHeight(curHeight: 20)))
@@ -253,11 +208,11 @@ struct Boton: View {
 
 struct buttonList: ButtonStyle {
     var font: Font = .title
-    var padding: CGFloat = 0
+    var padding: CGFloat = 10
     var bgColor: Color = Color.white
     var fgColor: Color = Color.black
     var cornerRadius: CGFloat = 10
-    var edges: [Edge] = [.top]
+    var edges: [Edge] = [.top, .bottom]
     var linewidth: CGFloat = 0.3
     
     func makeBody(configuration: Configuration) -> some View {
@@ -279,3 +234,20 @@ struct ListInfoView_Previews: PreviewProvider {
     }
 }
 
+/*
+.navigationBarItems(leading:
+  Button(action: {
+    self.navigateToListInfoView.wrappedValue = false
+  }) {
+    HStack{
+      Image("icons8-atras")
+          .resizable()
+          .frame(width: adapted.adaptedWidth(curWidth: 31), height: adapted.adaptedWidth(curWidth: 31), alignment: .center)
+      Text("im")
+          .font(.system(size: adapted.adaptedWidth(curWidth: 18)))
+          .offset(x: -(adapted.adaptedWidth(curWidth: 15)))
+      Spacer()
+  }
+  .frame(width: adapted.adaptedWidth(curWidth: 400), height: 60, alignment: .center)
+}.padding(7))
+*/

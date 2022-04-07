@@ -84,7 +84,7 @@ var mainView: some View {
                             .fontWeight(.bold)
                             .font(.system(size: adapted.adaptedHeight(curHeight: 25), weight: .regular))
                             .fixedSize(horizontal: false, vertical: true)
-                            .foregroundColor(Color(UIColor(named: "dark-red")!))
+                            .foregroundColor(Color.red)
                         Text("Misionero")
                             .fontWeight(.bold)
                             .font(.system(size: adapted.adaptedHeight(curHeight: 25), weight: .regular))

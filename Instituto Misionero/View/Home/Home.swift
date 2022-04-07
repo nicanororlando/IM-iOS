@@ -69,8 +69,7 @@ struct Home: View {
                  ModalView(isShowing: $showModal, curHeight: adapted.adaptedHeight(curHeight: 450))
                 
              }// --> ZStack
-             .navigationBarTitle("")
-             .navigationBarHidden(true)
+            .navigationBarTitle("im", displayMode: .inline)
          }// --> Nav view
      }// --> Body
 }
