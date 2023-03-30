@@ -1,3 +1,3 @@
-# Aplicacion-Instituto-Misionero-----iOS
+# Aplicacion Instituto Misionero iOS
 App Instituto Misionero para dispositivos iOS.
-Lenguaje utilizado: SwiftUi
+Principal Lenguaje utilizado: SwiftUi
